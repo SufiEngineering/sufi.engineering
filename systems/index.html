@@ -1,258 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tailwind.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Smart Systems — Sufi Engineering</title>
+    <meta name="description" content="Intelligent automation and control systems for modern rice mills. PLC automation, real-time monitoring, and smart dashboards by Sufi Engineering.">
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
-    <title>Sufi Engineering Systems | Rice Mills Systems</title>
-    <meta name="description" content="Sufi Engineering is a company that specializes in providing innovative machines and software solutions for the rice industry. With a team of experienced engineers and developers, the company is dedicated to delivering cutting-edge technology and superior customer service to its clients.">
-    <meta property="og:image" content="https://sufi.engineering/images/cover.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: { extend: {
+          colors: { brand:{50:'#fef2f2',100:'#fee2e2',200:'#fecaca',300:'#fca5a5',400:'#f87171',500:'#ef4444',600:'#dc2626',700:'#b91c1c',800:'#991b1b',900:'#7f1d1d'}, dark:{50:'#f9fafb',100:'#1a1a1a',200:'#141414',300:'#111111',400:'#0d0d0d',500:'#0a0a0a'} },
+          fontFamily: { display:['Space Grotesk','Inter','sans-serif'], body:['Inter','system-ui','sans-serif'] }
+        }}
+      }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="bg-white dark:bg-gray-900">
-    <nav x-data="{ isOpen: false }" class="relative bg-white shadow dark:bg-gray-800">
-        <div class="container px-6 py-3 mx-auto md:flex">
-            <div class="flex items-center justify-between">
-                <a href="/">
-                    <img class="w-auto h-6 sm:h-7" src="/logo.png" alt="">
-                </a>
-    
-                <!-- Mobile menu button -->
-                <div class="flex lg:hidden">
-                    <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-                        </svg>
-                
-                        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+<body class="bg-dark-500 text-white font-body antialiased">
+<div class="loader-screen" id="loader"><div class="loader-pulse"></div></div>
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <a href="/" class="flex items-center gap-3 group"><img src="/logo.png" alt="Sufi Engineering" class="h-8 md:h-9 transition-transform duration-300 group-hover:scale-105"><span class="font-display font-bold text-lg hidden sm:block">Sufi Engineering</span></a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Home</a>
+                <a href="/about" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">About</a>
+                <a href="/works/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Works</a>
+                <a href="/systems/" class="px-4 py-2 text-sm font-medium text-brand-400 rounded-lg">Systems</a>
+                <a href="/customers-success-stories/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Stories</a>
+                <a href="/careers/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Careers</a>
             </div>
-    
-            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-            <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:opacity-100 md:translate-x-0 md:flex md:items-center md:justify-between">
-                <div class="flex flex-col px-2 -mx-4 md:flex-row md:mx-10 md:py-0">
-                    <a href="/" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Home</a>
-                    <a href="/about" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">About</a>
-                    <a href="/contact" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Contact</a>
-                    <a href="/works/" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Works</a>
-                    <a href="/systems/" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Systems</a>
-                    <a href="/careers" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Careers</a>
-                    <a href="/customers-success-stories/" class="px-2.5 py-2 text-gray-700 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 md:mx-2">Customers Stories</a>
-                </div>
-    
-                <!-- <div class="relative mt-4 md:mt-0">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                        <svg class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                    </span>
-    
-                    <input type="text" class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-red-400 dark:focus:border-red-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-red-300" placeholder="Search">
-                </div> -->
+            <div class="flex items-center gap-3">
+                <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all btn-magnetic">Get a Quote</a>
+                <button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
             </div>
         </div>
-    </nav>
-  <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 md:mt-12 mx-auto max-w-screen-xl text-center lg:px-12">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Sufi Engineering Systems</h1>
-        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Empowering Rice Businesses with Advanced Technology.</p>
+    </div>
+</nav>
+<div class="mobile-menu-overlay" id="menuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="p-6">
+        <div class="flex items-center justify-between mb-8"><img src="/logo.png" alt="Sufi Engineering" class="h-8"><button id="menuClose" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+        <div class="space-y-1">
+            <a href="/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Home</a>
+            <a href="/about" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">About</a>
+            <a href="/works/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Works</a>
+            <a href="/systems/" class="block px-4 py-3 text-lg font-medium text-brand-400 bg-brand-600/10 rounded-xl">Systems</a>
+            <a href="/customers-success-stories/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Customer Stories</a>
+            <a href="/careers/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Careers</a>
+            <a href="/contact" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Contact</a>
+        </div>
+        <div class="mt-8 pt-8 border-t border-white/10"><a href="/contact" class="flex items-center justify-center gap-2 w-full bg-brand-600 text-white font-semibold py-3.5 rounded-full">Get a Quote</a></div>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-20 hero-gradient noise-overlay overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="max-w-3xl">
+            <div class="reveal inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6"><span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>Smart Technology</div>
+            <h1 class="reveal font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">Intelligent <span class="text-gradient">Systems</span></h1>
+            <p class="reveal mt-6 text-lg md:text-xl text-gray-400 leading-relaxed">Automation, monitoring, and software solutions that bring your rice mill into the digital age.</p>
+        </div>
     </div>
 </section>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">explore our <br><span class="underline decoration-red-500">Projects</span></h1>
+<!-- Systems Showcase -->
+<section class="py-16 md:py-24 bg-dark-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="reveal-scale rounded-2xl overflow-hidden mb-16 glow-red">
+            <img src="/images/systems.jpg" alt="Smart Control Systems" class="w-full aspect-[21/9] object-cover">
+        </div>
 
-        <p class="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300">
-            Discover our diverse range of projects and explore how we have been working towards creating innovative solutions to cater to various needs. From sustainable developments to groundbreaking research, our projects showcase our commitment to excellence and our passion for driving positive change.
-        </p>
-
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-2">
-            
-
-            <div class="p-8 space-y-3 border-2 border-red-400 dark:border-red-300 rounded-xl">
-
-                <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Rice Directory</h1>
-
-                <p class="text-gray-500 dark:text-gray-300">
-                    Rice.Directory by Sufi Engineering is your ultimate guide to the rice industry, offering a wealth of information, resources, and tools to help you succeed. Discover listings of rice mills, suppliers, exporters, and other industry professionals from around the world. Explore our directory today and unlock the full potential of the rice industry.
-                </p>
-
-                <a href="https://rice.directory" class="inline-flex p-2 text-red-500 capitalize transition-colors duration-300 transform bg-red-100 rounded-full rtl:-scale-x-100 dark:bg-red-500 dark:text-white hover:underline hover:text-red-600 dark:hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </a>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">PLC Automation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Advanced PLC-based control systems that automate your entire processing line. Reduce manual intervention and human error with programmable logic controllers.</p>
             </div>
-            <div class="p-8 space-y-3 border-2 border-red-400 dark:border-red-300 rounded-xl">
-
-                <h1 class="text-xl font-semibold text-gray-700 capitalize dark:text-white">Rice Guide</h1>
-
-                <p class="text-gray-500 dark:text-gray-300">
-                    Rice.Guide by Sufi Engineering is your ultimate resource for the latest trends and innovations in the rice industry. With a comprehensive range of articles, tutorials, and how-to guides, Rice.Guide covers every aspect of rice production and processing. Explore our guide today and stay ahead of the curve.
-                </p>
-
-                <a href="https://rice.guide" class="inline-flex p-2 text-red-500 capitalize transition-colors duration-300 transform bg-red-100 rounded-full rtl:-scale-x-100 dark:bg-red-500 dark:text-white hover:underline hover:text-red-600 dark:hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </a>
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">Real-Time Monitoring</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Monitor every machine, every metric in real-time. Get alerts on your phone, track production data, and identify bottlenecks instantly.</p>
+            </div>
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">Custom Software</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Tailored software solutions for inventory management, production reporting, quality analysis, and business intelligence.</p>
+            </div>
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">Energy Management</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Smart power distribution and energy monitoring. Reduce electricity costs by up to 30% with intelligent load balancing.</p>
+            </div>
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">Mobile Dashboard</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Control and monitor your entire mill from your smartphone. Real-time data, notifications, and remote control at your fingertips.</p>
+            </div>
+            <div class="bg-dark-300 rounded-2xl p-6 md:p-8 border border-white/5 hover:border-brand-600/30 transition-colors ripple">
+                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-5"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+                <h3 class="text-lg font-bold mb-2">Safety Systems</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Integrated safety monitoring with emergency shutoffs, fire detection, and compliance reporting for regulatory standards.</p>
             </div>
         </div>
     </div>
 </section>
-<section class="bg-white dark:bg-gray-900">
-    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full" src="/images/systems.jpg" alt="dashboard image">
-        <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Sufi Engineering Systems</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Sufi Engineering, Systems Division offers cutting-edge software solutions to help businesses optimize their operations and increase productivity. Our software solutions are designed to streamline operations and reduce costs. Our team of software engineers works closely with clients to understand their unique needs and develop tailored solutions that deliver tangible results. Explore our systems division and take your business to the next level.</p>
-            <!-- <a href="#" class="inline-flex items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-red-900">
-                Get started
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a> -->
+
+<!-- Digital Ecosystem -->
+<section class="py-16 md:py-24 bg-dark-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="reveal text-center max-w-3xl mx-auto mb-12">
+            <span class="text-brand-500 text-sm font-semibold tracking-widest uppercase">Digital Platforms</span>
+            <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">Our Digital Ecosystem</h2>
+            <p class="mt-4 text-gray-400">Beyond hardware — we build platforms that connect and empower the rice industry.</p>
         </div>
-    </div>
-</section>
-<section class="bg-white dark:bg-gray-900">
-    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full md:hidden" src="/images/office.jpg" alt="dashboard image">
-        <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Office</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">In the heart of Okara city, you'll find the office of Sufi Engineering Systems. Our office is dedicated to developing software systems specifically designed for the rice industry. It is a dynamic and vibrant space where our talented team of software engineers and data analysts collaborate to create innovative solutions. With a deep understanding of the challenges faced by the rice industry, our office is committed to providing transformative software systems that revolutionize rice businesses. Step into our office and witness the power of digital innovation right here in Okara city.</p>
-            <a href="/careers" class="inline-flex items-center text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-red-900">
-                Join Us
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger-children">
+            <a href="https://ricepolisher.com" target="_blank" rel="noopener" class="bg-dark-300 rounded-2xl p-5 border border-white/5 hover:border-brand-600/30 transition-all card-lift group text-center">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 flex items-center justify-center mx-auto mb-3"><svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <h3 class="font-bold text-sm">RicePolisher.com</h3>
+                <p class="text-xs text-gray-500 mt-1">Polishing machines</p>
+            </a>
+            <a href="https://ricegrader.com" target="_blank" rel="noopener" class="bg-dark-300 rounded-2xl p-5 border border-white/5 hover:border-brand-600/30 transition-all card-lift group text-center">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 flex items-center justify-center mx-auto mb-3"><svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"/></svg></div>
+                <h3 class="font-bold text-sm">RiceGrader.com</h3>
+                <p class="text-xs text-gray-500 mt-1">Grading machines</p>
+            </a>
+            <a href="https://rice.directory" target="_blank" rel="noopener" class="bg-dark-300 rounded-2xl p-5 border border-white/5 hover:border-brand-600/30 transition-all card-lift group text-center">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 flex items-center justify-center mx-auto mb-3"><svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div>
+                <h3 class="font-bold text-sm">Rice.Directory</h3>
+                <p class="text-xs text-gray-500 mt-1">Industry directory</p>
+            </a>
+            <a href="https://rice.guide" target="_blank" rel="noopener" class="bg-dark-300 rounded-2xl p-5 border border-white/5 hover:border-brand-600/30 transition-all card-lift group text-center">
+                <div class="w-10 h-10 rounded-lg bg-brand-600/20 flex items-center justify-center mx-auto mb-3"><svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+                <h3 class="font-bold text-sm">Rice.Guide</h3>
+                <p class="text-xs text-gray-500 mt-1">Knowledge base</p>
             </a>
         </div>
-        <img class="w-full hidden md:block" src="/images/office.jpg" alt="dashboard image">
     </div>
 </section>
 
-  <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-md sm:text-center">
-            <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">Sign up for our newsletter</h2>
-            <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.</p>
-            
-                <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                    <div class="relative w-full">
-                        <label for="email" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                        </div>
-                        <input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Enter your email" type="email" id="email" required="">
-                    </div>
-                    <div>
-                        <button id="button" onclick="subscribe()" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-red-700 border-red-600 sm:rounded-none sm:rounded-r-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Subscribe</button>
-                    </div>
-                </div>
-                <!-- <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Read our Privacy Policy</a>.</div> -->
+<!-- CTA -->
+<section class="py-20 md:py-28 bg-dark-500 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-900/40 via-dark-500 to-dark-500"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <div class="reveal">
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Upgrade Your Mill to <span class="text-gradient">Smart</span></h2>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Discover how automation can save you time, money, and boost your output quality.</p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-full transition-all btn-magnetic">Schedule Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
+            </div>
         </div>
     </div>
-  </section>
-<footer class="p-4 bg-white sm:p-6 dark:bg-gray-800">
-    <div class="mx-auto max-w-screen-xl">
-        <div class="md:flex md:justify-between">
-            <div class="mb-6 md:mb-0">
-                <a href="https://sufi.engineering" class="flex items-center">
-                    <img src="/logo.png" class="mr-3 h-8" alt="Sufi Engineering Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sufi Engineering</span>
-                </a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark-500 border-t border-white/5 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="col-span-2 md:col-span-1">
+                <a href="/" class="flex items-center gap-3 mb-4"><img src="/logo.png" alt="Sufi Engineering" class="h-8"><span class="font-display font-bold text-lg">Sufi Engineering</span></a>
+                <p class="text-gray-500 text-sm leading-relaxed">Engineering the future of rice processing since 1982.</p>
+                <div class="mt-6 flex items-center gap-3">
+                    <a href="https://facebook.com/sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="https://youtube.com/@sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="YouTube"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 01-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 01-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 011.768-1.768C5.746 5 12 5 12 5s6.255 0 7.814.418zM15.194 12L10 15V9l5.194 3z"/></svg></a>
+                    <a href="https://tiktok.com/@sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="TikTok"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 003 15.66 6.34 6.34 0 0013.86 20.15a6.81 6.81 0 00.52-.57V8.73a8.72 8.72 0 005.35 1.86V7.14a4.83 4.83 0 01-3.77-.97"/></svg></a>
+                    <a href="https://instagram.com/sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
+                </div>
             </div>
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Works</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="https://ricepolisher.com" class="hover:underline">Rice Polishers</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="https://ricegraders.com" class="hover:underline">Rice Graders</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Software</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="https://rice.directory" class="hover:underline">Rice Directory</a>
-                        </li>
-                        <li>
-                            <a href="https://rice.guide" class="hover:underline">Rice Guide</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <a href="https://facebook.com/sufiengineering" class="hover:underline ">Facebook</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="https://tiktok.com/@sufiengineering" class="hover:underline ">Tiktok</a>
-                        </li>
-                        <li>
-                            <a href="https://youtube.com/@sufiengineering" class="hover:underline">YouTube</a>
-                        </li>
-                    </ul>
-                </div>
-                
-            </div>
+            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Company</h4><ul class="space-y-3 text-sm"><li><a href="/about" class="text-gray-500 hover:text-white transition-colors">About</a></li><li><a href="/works/" class="text-gray-500 hover:text-white transition-colors">Works</a></li><li><a href="/systems/" class="text-gray-500 hover:text-white transition-colors">Systems</a></li><li><a href="/careers/" class="text-gray-500 hover:text-white transition-colors">Careers</a></li><li><a href="/contact" class="text-gray-500 hover:text-white transition-colors">Contact</a></li></ul></div>
+            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Products</h4><ul class="space-y-3 text-sm"><li><a href="https://ricepolisher.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-white transition-colors">Rice Polishers</a></li><li><a href="https://ricegrader.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-white transition-colors">Rice Graders</a></li><li><a href="/customers-success-stories/" class="text-gray-500 hover:text-white transition-colors">Customer Stories</a></li></ul></div>
+            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h4><ul class="space-y-3 text-sm"><li><a href="mailto:info@sufi.engineering" class="text-gray-500 hover:text-white transition-colors">info@sufi.engineering</a></li><li><a href="tel:+923216954361" class="text-gray-500 hover:text-white transition-colors">+92 321 695 4361</a></li><li class="text-gray-500">Sufi Street, Okara<br>Punjab, Pakistan</li></ul></div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://sufi.engineering" class="hover:underline">Sufi Engineering</a>. All Rights Reserved.
-            </span>
-            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                <a href="https://facebook.com/sufiengineering" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://instagram.com/sufiengineering" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://twitter.com/sufiengineering" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                </a>
-                <a href="https://github.com/sufiengineering" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                </a>
-            </div>
+        <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-600 text-sm">&copy; 2026 Sufi Engineering. All rights reserved.</p>
+            <a href="https://g.page/SufiEngineering" target="_blank" rel="noopener" class="text-xs text-gray-600 hover:text-gray-400 transition-colors flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>Okara, Pakistan</a>
         </div>
     </div>
 </footer>
+
+<a href="https://wa.me/923216954361?text=Hello%20Sufi%20Engineering!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
+
 <script>
-    function subscribe() {
-        document.getElementById("button").disabled=true;
-        var email = document.getElementById("email").value;
-        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-        if (!emailRegex.test(email)) {
-            alert("Invalid Email");
-            return;
-        }
-        fetch("https://lingering-bar-c942.adilj13.workers.dev?site=sufi.engineering&email="+email)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            if(data.success==false){
-                alert(data.error);
-            }else if(data.success==true){
-                alert("Congratulations on signup!");
-            }
-            document.getElementById("button").disabled=false;
-        })
-        .catch(function(error) {
-            alert(error);
-            document.getElementById("button").disabled=false;
-        });
-    }
-    
+window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('loaded'),300)});
+const menuToggle=document.getElementById('menuToggle'),menuClose=document.getElementById('menuClose'),mobileMenu=document.getElementById('mobileMenu'),menuOverlay=document.getElementById('menuOverlay');
+function openMenu(){mobileMenu.classList.add('open');menuOverlay.classList.add('open');document.body.style.overflow='hidden'}
+function closeMenu(){mobileMenu.classList.remove('open');menuOverlay.classList.remove('open');document.body.style.overflow=''}
+menuToggle.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);menuOverlay.addEventListener('click',closeMenu);
+const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('nav-scrolled',window.scrollY>50)});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children').forEach(el=>new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'}).observe(el));
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.min.js" integrity="sha512-Atu8sttM7mNNMon28+GHxLdz4Xo2APm1WVHwiLW9gW4bmHpHc/E2IbXrj98SmefTmbqbUTOztKl5PDPiu0LD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
