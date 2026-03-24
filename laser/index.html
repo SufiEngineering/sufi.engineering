@@ -462,6 +462,10 @@ const MATERIAL_COST_PER_KG = { ms: 300, ss: 500 }; // PKR
 const AREA_PRICE_PER_SQFT = 300; // PKR
 const AREA_REFERENCE_GAUGE_MM = 1.6; // 16 gauge ≈ 1.6mm
 
+// Unit conversions
+const MM2_PER_SQFT = 92903.04; // mm² in 1 sqft
+const MM3_PER_M3 = 1e9; // mm³ in 1 m³
+
 // Simple DXF Parser (client-side)
 function parseDXF(content) {
     const lines = content.split('\n').map(l => l.trim());
@@ -629,7 +633,7 @@ function getBoundingBox(entities) {
             e.vertices.forEach(p => { minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y); });
         }
     });
-    if (!isFinite(minX)) return { width: 0, height: 0, minX: 0, minY: 0, maxX: 0, maxY: 0 };
+    if (!isFinite(minX) || !isFinite(minY) || !isFinite(maxX) || !isFinite(maxY)) return { width: 0, height: 0, minX: 0, minY: 0, maxX: 0, maxY: 0 };
     return { width: maxX - minX, height: maxY - minY, minX, minY, maxX, maxY };
 }
 
@@ -669,7 +673,7 @@ function calcMethod2(entities, thickness, materialType) {
     // Bounding box area in mm², thickness in mm
     const areaMM2 = bbox.width * bbox.height;
     const volumeMM3 = areaMM2 * thickness;
-    const volumeM3 = volumeMM3 / 1e9; // convert mm³ → m³
+    const volumeM3 = volumeMM3 / MM3_PER_M3; // convert mm³ → m³
     const weightKg = volumeM3 * STEEL_DENSITY;
     const costPerKg = MATERIAL_COST_PER_KG[materialType] || 300;
     const unitCost = weightKg * costPerKg;
@@ -689,9 +693,9 @@ function calcMethod2(entities, thickness, materialType) {
 // ===== METHOD 3: Area (per sqft with material) =====
 function calcMethod3(entities, thickness) {
     const bbox = getBoundingBox(entities);
-    // Convert bounding box area from mm² to sqft (1 sqft = 92903.04 mm²)
+    // Convert bounding box area from mm² to sqft
     const areaMM2 = bbox.width * bbox.height;
-    const areaSqft = areaMM2 / 92903.04;
+    const areaSqft = areaMM2 / MM2_PER_SQFT;
     // Scale price by thickness relative to 16 gauge (1.6mm)
     const thicknessMultiplier = thickness / AREA_REFERENCE_GAUGE_MM;
     const unitCost = areaSqft * AREA_PRICE_PER_SQFT * thicknessMultiplier;
