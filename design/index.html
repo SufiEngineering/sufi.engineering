@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Design Division — Sufi Engineering</title>
+    <meta name="description"
+        content="Sufi Engineering's Design Division — CAD drafting, 2D/3D modeling, industrial product design, and engineering drawings. From concept to production-ready designs.">
+    <meta property="og:title" content="Design Division — Sufi Engineering">
+    <meta property="og:description"
+        content="Professional CAD design, 3D modeling, and engineering drawings. From concept sketches to production-ready technical documentation.">
+    <meta property="og:url" content="https://sufi.engineering/design/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sufi Engineering">
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { 50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b', 900: '#7f1d1d' }, dark: { 50: '#f9fafb', 100: '#1a1a1a', 200: '#141414', 300: '#111111', 400: '#0d0d0d', 500: '#0a0a0a' } },
+                    fontFamily: { display: ['Space Grotesk', 'Inter', 'sans-serif'], body: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Uses standard brand styles from /css/style.css -->
+</head>
+
+<body class="bg-dark-500 text-white font-body antialiased">
+    <div class="loader-screen" id="loader">
+        <div class="loader-pulse"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="/" class="flex items-center gap-3 group"><img src="/logo.png" alt="Sufi Engineering"
+                        class="h-8 md:h-9 transition-transform duration-300 group-hover:scale-105"><span
+                        class="font-display font-bold text-lg hidden sm:block">Sufi Engineering</span></a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Home</a>
+                    <a href="/about"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">About</a>
+                    <a href="/works/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Works</a>
+                    <a href="/systems/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Systems</a>
+                    <a href="/laser/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Laser</a>
+                    <a href="/design/" class="px-4 py-2 text-sm font-medium text-brand-400 rounded-lg">Design</a>
+                    <a href="/customers-success-stories/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Stories</a>
+                    <a href="/careers/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Careers</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="/contact"
+                        class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all btn-magnetic">Get
+                        a Quote</a>
+                    <button id="menuToggle"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+                        aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><img src="/logo.png" alt="Sufi Engineering"
+                    class="h-8"><button id="menuClose"
+                    class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+                    aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg></button></div>
+            <div class="space-y-1">
+                <a href="/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Home</a>
+                <a href="/about"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">About</a>
+                <a href="/works/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Works</a>
+                <a href="/systems/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Systems</a>
+                <a href="/laser/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Laser
+                    Cutting</a>
+                <a href="/design/"
+                    class="block px-4 py-3 text-lg font-medium text-brand-400 bg-brand-600/10 rounded-xl">Design</a>
+                <a href="/customers-success-stories/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Customer
+                    Stories</a>
+                <a href="/careers/"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Careers</a>
+                <a href="/contact"
+                    class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Contact</a>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10">
+                <a href="/contact"
+                    class="flex items-center justify-center gap-2 w-full bg-brand-600 text-white font-semibold py-3.5 rounded-full">Get
+                    a Quote <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 hero-gradient noise-overlay overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="particle" style="top:10%;left:20%;animation-delay:0s"></div>
+            <div class="particle" style="top:30%;left:70%;animation-delay:1s"></div>
+            <div class="particle" style="top:60%;left:40%;animation-delay:2s"></div>
+            <div class="particle" style="top:80%;left:80%;animation-delay:3s"></div>
+            <div class="particle" style="top:15%;left:55%;animation-delay:0.5s"></div>
+            <div class="particle" style="top:70%;left:15%;animation-delay:2.5s"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl">
+                <div
+                    class="reveal inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>
+                    Design Division
+                </div>
+                <h1
+                    class="reveal font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+                    From <span class="text-gradient">Concept</span> to Production-Ready
+                </h1>
+                <p class="reveal mt-6 text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
+                    Professional CAD design, 3D modeling, and engineering drawings. We turn your ideas into precise,
+                    manufacturable designs — ready for fabrication.
+                </p>
+                <div class="reveal mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-7 py-3.5 rounded-full transition-all btn-magnetic text-base">
+                        Start Your Project <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                    <a href="#services"
+                        class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-7 py-3.5 rounded-full transition-all hover:bg-white/5 text-base">Our
+                        Services</a>
+                </div>
+                <div class="reveal mt-10 grid grid-cols-3 gap-4 max-w-lg">
+                    <div class="bg-dark-300/60 border border-white/5 rounded-xl p-3 text-center">
+                        <div class="text-xl font-bold font-display text-gradient">2D/3D</div>
+                        <div class="text-xs text-gray-500 mt-1">CAD Modeling</div>
+                    </div>
+                    <div class="bg-dark-300/60 border border-white/5 rounded-xl p-3 text-center">
+                        <div class="text-xl font-bold font-display text-gradient">DXF</div>
+                        <div class="text-xs text-gray-500 mt-1">Laser-Ready Files</div>
+                    </div>
+                    <div class="bg-dark-300/60 border border-white/5 rounded-xl p-3 text-center">
+                        <div class="text-xl font-bold font-display text-gradient">40+</div>
+                        <div class="text-xs text-gray-500 mt-1">Years Expertise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 md:py-28 bg-dark-400 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="reveal text-brand-400 text-sm font-semibold tracking-widest uppercase">Services</span>
+                <h2 class="reveal mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">What We
+                    <span class="text-gradient">Design</span>
+                </h2>
+                <p class="reveal mt-4 text-gray-400 max-w-2xl mx-auto">Comprehensive design services backed by decades
+                    of manufacturing experience.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">2D CAD Drafting</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Precise engineering drawings, floor plans,
+                        fabrication drawings, and technical documentation in AutoCAD-compatible formats.</p>
+                </div>
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">3D Modeling</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Detailed 3D models for visualization, prototyping,
+                        and manufacturing. SolidWorks, Fusion 360, and more.</p>
+                </div>
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6z" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Laser-Cut DXF Files</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Production-ready DXF files optimized for CNC laser
+                        cutting. Fully compatible with our laser cutting division.</p>
+                </div>
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37 1 .608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Product Design</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Industrial product design from concept to
+                        prototype. We help you refine ideas into manufacturable products.</p>
+                </div>
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Technical Documentation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Assembly drawings, BOMs, installation guides, and
+                        maintenance manuals with precise dimensions.</p>
+                </div>
+                <div
+                    class="bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift hover:border-brand-600/30 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><svg
+                            class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Reverse Engineering</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Recreate existing parts and assemblies from
+                        physical samples into accurate CAD models and drawings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-20 md:py-28 bg-dark-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="reveal text-brand-400 text-sm font-semibold tracking-widest uppercase">Process</span>
+                <h2 class="reveal mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">How We
+                    <span class="text-gradient">Work</span>
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <div class="relative bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><span
+                            class="font-display text-xl font-bold text-brand-400">01</span></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Brief & Scope</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Share your concept — a sketch, photo, description,
+                        or existing part. We define the scope together.</p>
+                </div>
+                <div class="relative bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><span
+                            class="font-display text-xl font-bold text-brand-400">02</span></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Draft & Review</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Our engineers create initial designs and share for
+                        your review. Iterate until perfect.</p>
+                </div>
+                <div class="relative bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><span
+                            class="font-display text-xl font-bold text-brand-400">03</span></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Finalize</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Detailed dimensions, tolerances, and material specs
+                        are finalized for production readiness.</p>
+                </div>
+                <div class="relative bg-dark-300 border border-white/5 rounded-2xl p-6 card-lift">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mb-4"><span
+                            class="font-display text-xl font-bold text-brand-400">04</span></div>
+                    <h3 class="font-display text-lg font-bold mb-2">Deliver & Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Receive production-ready files in your preferred
+                        format. Ongoing support for revisions and fabrication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="py-20 md:py-28 bg-dark-400 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-brand-400 text-sm font-semibold tracking-widest uppercase">Why Choose Us</span>
+                    <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">Design + <span
+                            class="text-gradient">Manufacturing</span> Expertise</h2>
+                    <p class="mt-4 text-gray-400 leading-relaxed">Unlike pure design firms, our engineers have 40+ years
+                        of hands-on manufacturing experience. Every design is optimized for real-world fabrication.</p>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-600/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Manufacturing-First Design</h3>
+                                <p class="text-gray-400 text-sm mt-1">Every drawing is designed with fabrication in mind
+                                    — no impractical specs, no redesign surprises.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-600/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">End-to-End Service</h3>
+                                <p class="text-gray-400 text-sm mt-1">Design it, cut it, build it — all under one roof.
+                                    Seamless integration with our laser cutting and fabrication divisions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-brand-600/10 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Fast Turnaround</h3>
+                                <p class="text-gray-400 text-sm mt-1">Simple drawings in 24 hours. Complex assemblies
+                                    within a week. Rush delivery available.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-dark-300 border border-white/5 rounded-2xl p-6 text-center card-lift">
+                            <div class="text-3xl font-bold font-display text-gradient">40+</div>
+                            <div class="text-sm text-gray-400 mt-2">Years Experience</div>
+                        </div>
+                        <div class="bg-dark-300 border border-white/5 rounded-2xl p-6 text-center card-lift">
+                            <div class="text-3xl font-bold font-display text-gradient">500+</div>
+                            <div class="text-sm text-gray-400 mt-2">Projects Designed</div>
+                        </div>
+                        <div class="bg-dark-300 border border-white/5 rounded-2xl p-6 text-center card-lift">
+                            <div class="text-3xl font-bold font-display text-gradient">24h</div>
+                            <div class="text-sm text-gray-400 mt-2">Quick Turnaround</div>
+                        </div>
+                        <div class="bg-dark-300 border border-white/5 rounded-2xl p-6 text-center card-lift">
+                            <div class="text-3xl font-bold font-display text-gradient">100%</div>
+                            <div class="text-sm text-gray-400 mt-2">Production Ready</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 md:py-28 bg-dark-500 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-900/40 via-dark-500 to-dark-500"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-600/5 rounded-full blur-3xl"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <div class="reveal">
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Have a
+                    Design<br><span class="text-gradient">Challenge</span>?</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">From a napkin sketch to a full production
+                    drawing — tell us what you need and we'll make it happen.</p>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="/contact"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-full transition-all btn-magnetic text-base">Start
+                        Your Project <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></a>
+                    <a href="https://wa.me/923216954361?text=Hi%20Sufi%20Engineering!%20I%20need%20design%20services."
+                        target="_blank" rel="noopener"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-8 py-4 rounded-full transition-all hover:bg-white/5 text-base">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-500 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="/" class="flex items-center gap-3 mb-4"><img src="/logo.png" alt="Sufi Engineering"
+                            class="h-8"><span class="font-display font-bold text-lg">Sufi Engineering</span></a>
+                    <p class="text-gray-500 text-sm leading-relaxed">Engineering the future of rice processing since
+                        1982.</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <a href="https://facebook.com/sufiengineering" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors"
+                            aria-label="Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg></a>
+                        <a href="https://youtube.com/@sufiengineering" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors"
+                            aria-label="YouTube"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 01-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 01-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 011.768-1.768C5.746 5 12 5 12 5s6.255 0 7.814.418zM15.194 12L10 15V9l5.194 3z" />
+                            </svg></a>
+                        <a href="https://tiktok.com/@sufiengineering" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors"
+                            aria-label="TikTok"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 003 15.66 6.34 6.34 0 0013.86 20.15a6.81 6.81 0 00.52-.57V8.73a8.72 8.72 0 005.35 1.86V7.14a4.83 4.83 0 01-3.77-.97" />
+                            </svg></a>
+                        <a href="https://instagram.com/sufiengineering" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors"
+                            aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/about" class="text-gray-500 hover:text-white transition-colors">About</a></li>
+                        <li><a href="/works/" class="text-gray-500 hover:text-white transition-colors">Works</a></li>
+                        <li><a href="/systems/" class="text-gray-500 hover:text-white transition-colors">Systems</a>
+                        </li>
+                        <li><a href="/laser/" class="text-gray-500 hover:text-white transition-colors">Laser Cutting</a>
+                        </li>
+                        <li><a href="/design/" class="text-gray-500 hover:text-white transition-colors">Design</a></li>
+                        <li><a href="/careers/" class="text-gray-500 hover:text-white transition-colors">Careers</a>
+                        </li>
+                        <li><a href="/contact" class="text-gray-500 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Products</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="https://ricepolisher.com" target="_blank" rel="noopener"
+                                class="text-gray-500 hover:text-white transition-colors">Rice Polishers</a></li>
+                        <li><a href="https://ricegrader.com" target="_blank" rel="noopener"
+                                class="text-gray-500 hover:text-white transition-colors">Rice Graders</a></li>
+                        <li><a href="/customers-success-stories/"
+                                class="text-gray-500 hover:text-white transition-colors">Customer Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="mailto:info@sufi.engineering"
+                                class="text-gray-500 hover:text-white transition-colors">info@sufi.engineering</a></li>
+                        <li><a href="tel:+923216954361" class="text-gray-500 hover:text-white transition-colors">+92 321
+                                695 4361</a></li>
+                        <li class="text-gray-500">Sufi Street, Okara<br>Punjab, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-600 text-sm">&copy; 2026 Sufi Engineering. All rights reserved.</p>
+                <a href="https://g.page/SufiEngineering" target="_blank" rel="noopener"
+                    class="text-xs text-gray-600 hover:text-gray-400 transition-colors flex items-center gap-1"><svg
+                        class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    </svg>Okara, Pakistan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/923216954361?text=Hi%20Sufi%20Engineering!%20I%20need%20design%20services." target="_blank"
+        rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        </svg>
+    </a>
+
+    <script>
+        // ===== Common Site Scripts =====
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('loaded'), 300) });
+        const menuToggle = document.getElementById('menuToggle'), menuClose = document.getElementById('menuClose'), mobileMenu = document.getElementById('mobileMenu'), menuOverlay = document.getElementById('menuOverlay');
+        function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.add('open'); document.body.style.overflow = 'hidden' }
+        function closeMenu() { mobileMenu.classList.remove('open'); menuOverlay.classList.remove('open'); document.body.style.overflow = '' }
+        menuToggle.addEventListener('click', openMenu); menuClose.addEventListener('click', closeMenu); menuOverlay.addEventListener('click', closeMenu);
+        const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => { navbar.classList.toggle('nav-scrolled', window.scrollY > 50) });
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children').forEach(el => new IntersectionObserver((e) => { e.forEach(en => { if (en.isIntersecting) en.target.classList.add('active') }) }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el));
+        if ('ontouchstart' in window) { document.querySelectorAll('.card-lift').forEach(c => { c.addEventListener('touchstart', () => c.style.transform = 'scale(0.98)', { passive: true }); c.addEventListener('touchend', () => c.style.transform = '', { passive: true }) }) }
+    </script>
+</body>
+
+</html>

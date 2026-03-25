@@ -1,0 +1,15 @@
+{
+  "baseRate": 0.05,
+  "baseCharges": 200,
+  "piercingRate": 2.0,
+  "gasFactors": {
+    "air": 1.0,
+    "oxygen": 1.5
+  },
+  "thicknessFactor": {
+    "baselineThickness": 1.0,
+    "baselineFactor": 1.0,
+    "maxThickness": 16.0,
+    "maxFactor": 2.5
+  }
+}
