@@ -26,12 +26,12 @@
     "ss": {
       "name": "Stainless Steel (SS)",
       "density": 8.0,
-      "rateKg": 1200
+      "rateKg": 550
     },
     "gs": {
       "name": "Galvanized Steel (GS)",
       "density": 7.85,
-      "rateKg": 350
+      "rateKg": 250
     },
     "alu": {
       "name": "Aluminium",
