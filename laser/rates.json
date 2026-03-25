@@ -11,5 +11,12 @@
     "baselineFactor": 1.0,
     "maxThickness": 16.0,
     "maxFactor": 2.5
+  },
+  "materials": {
+    "none": { "name": "I will provide my own sheet", "density": 0, "rateKg": 0 },
+    "ms": { "name": "Mild Steel (MS)", "density": 7.85, "rateKg": 300 },
+    "ss": { "name": "Stainless Steel (SS)", "density": 8.0, "rateKg": 1200 },
+    "gs": { "name": "Galvanized Steel (GS)", "density": 7.85, "rateKg": 350 },
+    "alu": { "name": "Aluminium", "density": 2.7, "rateKg": 1000 }
   }
 }
