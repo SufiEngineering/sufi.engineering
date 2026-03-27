@@ -336,7 +336,7 @@
                                         <span id="baseChargeAppliedDisplay" class="font-semibold text-brand-400">—</span>
                                     </div>
                                     <div id="materialCostRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
-                                        <span class="text-gray-400">Material Cost (<span id="materialWeightDisplay">0</span> kg <span id="materialTypeDisplay" class="text-xs uppercase"></span>)</span>
+                                        <span class="text-gray-400">Material Cost (<span id="materialTypeDisplay" class="text-xs uppercase"></span>)</span>
                                         <span id="materialCostDisplay" class="font-semibold text-white">—</span>
                                     </div>
                                     <div class="flex justify-between items-center py-1 border-b border-white/5">
@@ -937,7 +937,7 @@ function updateQuote(entities, fileName) {
     if (quote.materialKey !== 'none') {
         matRow.classList.remove('hidden');
         matRow.classList.add('flex');
-        document.getElementById('materialWeightDisplay').textContent = quote.weightKg.toFixed(2);
+
         document.getElementById('materialTypeDisplay').textContent = quote.materialName;
         document.getElementById('materialCostDisplay').textContent = formatPKR(quote.materialCost);
         document.getElementById('materialNotice').textContent = '(Includes cutting & material cost)';
