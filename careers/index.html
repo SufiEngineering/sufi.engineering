@@ -1,183 +1,274 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Careers — Sufi Engineering</title>
-    <meta name="description" content="Join Pakistan's leading rice machinery manufacturer. Explore career opportunities at Sufi Engineering — engineers, technicians, and more.">
+    <meta name="description"
+        content="Join Pakistan's leading rice machinery manufacturer. Explore career opportunities at Sufi Engineering — building the future of industrial technology.">
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: { extend: {
-          colors: { brand:{50:'#fef2f2',100:'#fee2e2',200:'#fecaca',300:'#fca5a5',400:'#f87171',500:'#ef4444',600:'#dc2626',700:'#b91c1c',800:'#991b1b',900:'#7f1d1d'}, dark:{50:'#f9fafb',100:'#1a1a1a',200:'#141414',300:'#111111',400:'#0d0d0d',500:'#0a0a0a'} },
-          fontFamily: { display:['Space Grotesk','Inter','sans-serif'], body:['Inter','system-ui','sans-serif'] }
-        }}
-      }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { 50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b', 900: '#7f1d1d' }, dark: { 50: '#f9fafb', 100: '#1a1a1a', 200: '#141414', 300: '#111111', 400: '#0d0d0d', 500: '#0a0a0a' } },
+                    fontFamily: { display: ['Space Grotesk', 'Inter', 'sans-serif'], body: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
     </script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="bg-dark-500 text-white font-body antialiased">
-<div class="loader-screen" id="loader"><div class="loader-pulse"></div></div>
+    <div class="loader-screen" id="loader">
+        <div class="loader-pulse"></div>
+    </div>
 
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-16 md:h-20">
-            <a href="/" class="flex items-center gap-3 group"><img src="/logo.png" alt="Sufi Engineering" class="h-8 md:h-9 transition-transform duration-300 group-hover:scale-105"><span class="font-display font-bold text-lg hidden sm:block">Sufi Engineering</span></a>
-            <div class="hidden lg:flex items-center gap-1">
-                <a href="/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Home</a>
-                <a href="/about" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">About</a>
-                <a href="/works/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Works</a>
-                <a href="/systems/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Systems</a>
-                <a href="/laser/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Laser</a>
-                <a href="/customers-success-stories/" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Stories</a>
-                <a href="/careers/" class="px-4 py-2 text-sm font-medium text-brand-400 rounded-lg">Careers</a>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="/" class="flex items-center gap-3 group"><img src="/logo.png" alt="Sufi Engineering"
+                        class="h-8 md:h-9 transition-transform duration-300 group-hover:scale-105"><span
+                        class="font-display font-bold text-lg hidden sm:block">Sufi Engineering</span></a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Home</a>
+                    <a href="/about"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">About</a>
+                    <a href="/works/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Works</a>
+                    <a href="/systems/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Systems</a>
+                    <a href="/laser/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Laser</a>
+                    <a href="/design/"
+                        class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white rounded-lg transition-colors">Design</a>
+                    <a href="/careers/" class="px-4 py-2 text-sm font-medium text-brand-400 rounded-lg">Careers</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="/contact"
+                        class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all btn-magnetic">Get
+                        a Quote</a>
+                    <button id="menuToggle"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+                        aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg></button>
+                </div>
             </div>
-            <div class="flex items-center gap-3">
-                <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all btn-magnetic">Get a Quote</a>
-                <button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="Open menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+    </nav>
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <!-- Content simplified for length -->
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8"><img src="/logo.png" alt="Sufi Engineering" class="h-8"><button id="menuClose" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+            <div class="space-y-1">
+                <a href="/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Home</a>
+                <a href="/about" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">About</a>
+                <a href="/works/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Works</a>
+                <a href="/laser/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Laser cutting</a>
+                <a href="/design/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Design</a>
+                <a href="/careers/" class="block px-4 py-3 text-lg font-medium text-brand-400 bg-brand-600/10 rounded-xl">Careers</a>
+                <a href="/contact" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Contact</a>
             </div>
         </div>
     </div>
-</nav>
-<div class="mobile-menu-overlay" id="menuOverlay"></div>
-<div class="mobile-menu" id="mobileMenu">
-    <div class="p-6">
-        <div class="flex items-center justify-between mb-8"><img src="/logo.png" alt="Sufi Engineering" class="h-8"><button id="menuClose" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="Close menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
-        <div class="space-y-1">
-            <a href="/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Home</a>
-            <a href="/about" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">About</a>
-            <a href="/works/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Works</a>
-            <a href="/systems/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Systems</a>
-            <a href="/laser/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Laser Cutting</a>
-            <a href="/customers-success-stories/" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Customer Stories</a>
-            <a href="/careers/" class="block px-4 py-3 text-lg font-medium text-brand-400 bg-brand-600/10 rounded-xl">Careers</a>
-            <a href="/contact" class="block px-4 py-3 text-lg font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">Contact</a>
-        </div>
-        <div class="mt-8 pt-8 border-t border-white/10"><a href="/contact" class="flex items-center justify-center gap-2 w-full bg-brand-600 text-white font-semibold py-3.5 rounded-full">Get a Quote</a></div>
-    </div>
-</div>
 
-<!-- Hero -->
-<section class="relative pt-32 pb-16 md:pt-40 md:pb-20 hero-gradient noise-overlay overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="max-w-3xl">
-            <div class="reveal inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6"><span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>Join Our Team</div>
-            <h1 class="reveal font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tight">Build the <span class="text-gradient">Future</span> With Us</h1>
-            <p class="reveal mt-6 text-lg md:text-xl text-gray-400 leading-relaxed">Join a team of 50+ passionate engineers and technicians driving innovation in rice processing technology.</p>
+    <!-- Hero -->
+    <section class="relative pt-32 pb-16 md:pt-48 md:pb-28 hero-gradient noise-overlay overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="max-w-3xl">
+                <div class="reveal inline-flex items-center gap-2 bg-brand-600/10 border border-brand-600/20 text-brand-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-brand-500 rounded-full animate-pulse"></span>Join the Revolution
+                </div>
+                <h1 class="reveal font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight">
+                    Build the Engineering <br><span class="text-gradient">Future</span>
+                </h1>
+                <p class="reveal mt-8 text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl">
+                    Join a legacy of precision and innovation. We're looking for passionate engineers, technicians, and thinkers to help us drive the next 40 years of industrial excellence.
+                </p>
+                <div class="reveal mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="#openings" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-10 py-5 rounded-full transition-all text-center">View Openings</a>
+                    <a href="/about" class="border border-white/20 hover:border-white/40 text-white font-semibold px-10 py-5 rounded-full transition-all text-center">Our Story</a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Why Join -->
-<section class="py-16 md:py-24 bg-dark-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="reveal text-center max-w-3xl mx-auto mb-12">
-            <span class="text-brand-500 text-sm font-semibold tracking-widest uppercase">Why Sufi Engineering</span>
-            <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">More Than Just a Job</h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
-            <div class="bg-dark-300 rounded-2xl p-6 border border-white/5 hover:border-brand-600/30 transition-colors ripple text-center">
-                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mx-auto mb-4"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
-                <h3 class="font-bold mb-2">Growth</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">Clear career paths with mentorship from industry veterans.</p>
-            </div>
-            <div class="bg-dark-300 rounded-2xl p-6 border border-white/5 hover:border-brand-600/30 transition-colors ripple text-center">
-                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mx-auto mb-4"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
-                <h3 class="font-bold mb-2">Innovation</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">Work on cutting-edge machinery and smart systems.</p>
-            </div>
-            <div class="bg-dark-300 rounded-2xl p-6 border border-white/5 hover:border-brand-600/30 transition-colors ripple text-center">
-                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mx-auto mb-4"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                <h3 class="font-bold mb-2">Impact</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">Your work reaches 15+ countries and hundreds of mills.</p>
-            </div>
-            <div class="bg-dark-300 rounded-2xl p-6 border border-white/5 hover:border-brand-600/30 transition-colors ripple text-center">
-                <div class="w-12 h-12 rounded-xl bg-brand-600/10 flex items-center justify-center mx-auto mb-4"><svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-                <h3 class="font-bold mb-2">Team</h3>
-                <p class="text-gray-400 text-xs leading-relaxed">A collaborative, supportive family of 50+ experts.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Open Positions -->
-<section class="py-16 md:py-24 bg-dark-400">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="reveal text-center mb-12">
-            <span class="text-brand-500 text-sm font-semibold tracking-widest uppercase">Open Positions</span>
-            <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">Current Openings</h2>
-        </div>
-        <div class="space-y-4 stagger-children">
-            <a href="/careers/summer-internship-program" class="block bg-dark-300 rounded-2xl p-6 border border-white/5 hover:border-brand-600/30 transition-all card-lift group">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <div>
-                        <div class="flex items-center gap-2 mb-2"><span class="px-3 py-1 bg-green-600/10 text-green-400 text-xs font-semibold rounded-full">Open Now</span><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">Internship</span></div>
-                        <h3 class="text-lg font-bold">Summer Internship Program</h3>
-                        <p class="mt-1 text-gray-400 text-sm">Hands-on experience in mechanical and electrical engineering for university students.</p>
-                        <div class="mt-2 flex items-center gap-3 text-xs text-gray-500"><span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>Okara</span><span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Summer 2026</span></div>
+    <!-- Culture -->
+    <section class="py-20 md:py-32 bg-dark-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                <div class="reveal">
+                    <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight mb-8 text-gradient">The Sufi Culture</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">At Sufi Engineering, we combine the wisdom of 40+ years of manufacturing with the energy of modern technology. Our team isn't just employees; we're a family of innovators dedicated to perfection.</p>
+                    <div class="grid grid-cols-2 gap-6 mt-12">
+                        <div class="p-6 bg-dark-400 rounded-2xl border border-white/5">
+                            <h4 class="font-bold text-xl mb-2">50+</h4>
+                            <p class="text-sm text-gray-500">Industry Experts</p>
+                        </div>
+                        <div class="p-6 bg-dark-400 rounded-2xl border border-white/5">
+                            <h4 class="font-bold text-xl mb-2">40+</h4>
+                            <p class="text-sm text-gray-500">Years Experience</p>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2 text-brand-400 text-sm font-medium group-hover:gap-3 transition-all shrink-0">Apply <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></div>
                 </div>
-            </a>
-
-            <div class="bg-dark-300/50 rounded-2xl p-6 border border-white/5 text-center">
-                <p class="text-gray-400">Don't see the right role? Send your resume to <a href="mailto:info@sufi.engineering" class="text-brand-400 hover:text-brand-300 font-medium">info@sufi.engineering</a></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Life at Sufi -->
-<section class="py-16 md:py-24 bg-dark-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="reveal text-center max-w-3xl mx-auto mb-12">
-            <span class="text-brand-500 text-sm font-semibold tracking-widest uppercase">Life at Sufi</span>
-            <h2 class="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight">Behind the Scenes</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 stagger-children">
-            <div class="rounded-2xl overflow-hidden aspect-square"><img src="/images/welding.jpg" alt="Workshop" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"></div>
-            <div class="rounded-2xl overflow-hidden aspect-square"><img src="/images/office.jpg" alt="Office" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"></div>
-            <div class="rounded-2xl overflow-hidden aspect-square col-span-2 md:col-span-1"><img src="/images/works.jpg" alt="Engineering" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"></div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark-500 border-t border-white/5 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <div class="col-span-2 md:col-span-1">
-                <a href="/" class="flex items-center gap-3 mb-4"><img src="/logo.png" alt="Sufi Engineering" class="h-8"><span class="font-display font-bold text-lg">Sufi Engineering</span></a>
-                <p class="text-gray-500 text-sm leading-relaxed">Engineering the future of rice processing since 1982.</p>
-                <div class="mt-6 flex items-center gap-3">
-                    <a href="https://facebook.com/sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
-                    <a href="https://youtube.com/@sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="YouTube"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 01-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 01-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 011.768-1.768C5.746 5 12 5 12 5s6.255 0 7.814.418zM15.194 12L10 15V9l5.194 3z"/></svg></a>
-                    <a href="https://tiktok.com/@sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="TikTok"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 003 15.66 6.34 6.34 0 0013.86 20.15a6.81 6.81 0 00.52-.57V8.73a8.72 8.72 0 005.35 1.86V7.14a4.83 4.83 0 01-3.77-.97"/></svg></a>
-                    <a href="https://instagram.com/sufiengineering" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg></a>
+                <div class="reveal-right">
+                    <div class="rounded-3xl overflow-hidden aspect-video card-lift border border-white/10 group">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Innovation and Engineering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark-500/80 via-transparent to-transparent"></div>
+                    </div>
                 </div>
             </div>
-            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Company</h4><ul class="space-y-3 text-sm"><li><a href="/about" class="text-gray-500 hover:text-white transition-colors">About</a></li><li><a href="/works/" class="text-gray-500 hover:text-white transition-colors">Works</a></li><li><a href="/systems/" class="text-gray-500 hover:text-white transition-colors">Systems</a></li><li><a href="/laser/" class="text-gray-500 hover:text-white transition-colors">Laser Cutting</a></li><li><a href="/careers/" class="text-gray-500 hover:text-white transition-colors">Careers</a></li><li><a href="/contact" class="text-gray-500 hover:text-white transition-colors">Contact</a></li></ul></div>
-            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Products</h4><ul class="space-y-3 text-sm"><li><a href="https://ricepolisher.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-white transition-colors">Rice Polishers</a></li><li><a href="https://ricegrader.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-white transition-colors">Rice Graders</a></li><li><a href="/customers-success-stories/" class="text-gray-500 hover:text-white transition-colors">Customer Stories</a></li></ul></div>
-            <div><h4 class="text-sm font-semibold uppercase tracking-wider text-gray-400 mb-4">Contact</h4><ul class="space-y-3 text-sm"><li><a href="mailto:info@sufi.engineering" class="text-gray-500 hover:text-white transition-colors">info@sufi.engineering</a></li><li><a href="tel:+923216954361" class="text-gray-500 hover:text-white transition-colors">+92 321 695 4361</a></li><li class="text-gray-500">Sufi Street, Okara<br>Punjab, Pakistan</li></ul></div>
         </div>
-        <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-gray-600 text-sm">&copy; 2026 Sufi Engineering. All rights reserved.</p>
-            <a href="https://g.page/SufiEngineering" target="_blank" rel="noopener" class="text-xs text-gray-600 hover:text-gray-400 transition-colors flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>Okara, Pakistan</a>
+    </section>
+
+    <!-- Open Positions DYNAMIC -->
+    <section id="openings" class="py-20 md:py-32 bg-dark-400 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="reveal text-brand-400 text-sm font-semibold tracking-widest uppercase">Opportunities</span>
+                <h2 class="reveal mt-3 font-display text-4xl sm:text-5xl font-bold tracking-tight">Open <span class="text-gradient">Positions</span></h2>
+                
+                <div class="mt-8 flex justify-center gap-2 flex-wrap" id="dept-filters">
+                    <button class="px-4 py-2 bg-brand-600 text-white rounded-full text-xs font-bold uppercase tracking-widest transition-all filter-btn active" data-dept="all">All</button>
+                    <!-- Filters will be generated here -->
+                </div>
+            </div>
+
+            <div id="jobs-container" class="space-y-4 min-h-[400px]">
+                <!-- Job cards will be loaded here -->
+                <div class="flex justify-center items-center py-20">
+                    <div class="loader-pulse"></div>
+                </div>
+            </div>
+
+            <div class="mt-16 p-8 bg-dark-300 rounded-3xl border border-white/5 text-center reveal">
+                <h4 class="font-bold text-xl mb-4">Don't see the right role?</h4>
+                <p class="text-gray-400 text-sm mb-8">We're always looking for exceptional talent. If you have a passion for engineering and manufacturing, we'd love to hear from you.</p>
+                <a href="mailto:work@sufi.engineering" class="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-full transition-all">
+                    Send General Application
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<a href="https://wa.me/923216954361?text=Hello%20Sufi%20Engineering!" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></a>
+    <!-- Footer -->
+    <footer class="bg-dark-500 border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <img src="/logo.png" alt="Sufi Engineering" class="h-12 mx-auto mb-8">
+            <p class="text-gray-500 text-sm max-w-md mx-auto mb-12 italic">Engineering the future of rice processing since 1982.</p>
+            <div class="flex flex-wrap justify-center gap-8 text-sm mb-12">
+                <a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="/works/" class="text-gray-400 hover:text-white transition-colors">Works</a>
+                <a href="/design/" class="text-gray-400 hover:text-white transition-colors">Design</a>
+                <a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </div>
+            <p class="text-xs text-gray-600">&copy; 2026 Sufi Engineering. All rights reserved.</p>
+        </div>
+    </footer>
 
-<script>
-window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('loaded'),300)});
-const menuToggle=document.getElementById('menuToggle'),menuClose=document.getElementById('menuClose'),mobileMenu=document.getElementById('mobileMenu'),menuOverlay=document.getElementById('menuOverlay');
-function openMenu(){mobileMenu.classList.add('open');menuOverlay.classList.add('open');document.body.style.overflow='hidden'}
-function closeMenu(){mobileMenu.classList.remove('open');menuOverlay.classList.remove('open');document.body.style.overflow=''}
-menuToggle.addEventListener('click',openMenu);menuClose.addEventListener('click',closeMenu);menuOverlay.addEventListener('click',closeMenu);
-const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>{navbar.classList.toggle('nav-scrolled',window.scrollY>50)});
-document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children').forEach(el=>new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'}).observe(el));
-</script>
+    <script>
+        window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('loaded'), 300) });
+        const menuToggle = document.getElementById('menuToggle'), menuClose = document.getElementById('menuClose'), mobileMenu = document.getElementById('mobileMenu'), menuOverlay = document.getElementById('menuOverlay');
+        function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.add('open'); document.body.style.overflow = 'hidden' }
+        function closeMenu() { mobileMenu.classList.remove('open'); menuOverlay.classList.remove('open'); document.body.style.overflow = '' }
+        menuToggle.addEventListener('click', openMenu); menuClose.addEventListener('click', closeMenu); menuOverlay.addEventListener('click', closeMenu);
+        const navbar = document.getElementById('navbar'); window.addEventListener('scroll', () => { navbar.classList.toggle('nav-scrolled', window.scrollY > 50) });
+        
+        let allJobs = [];
+
+        async function loadJobs() {
+            const container = document.getElementById('jobs-container');
+            const filterContainer = document.getElementById('dept-filters');
+            
+            try {
+                const response = await fetch('/data/jobs.json');
+                allJobs = await response.json();
+                
+                // Generate filters
+                const depts = ['all', ...new Set(allJobs.map(j => j.department.toLowerCase()))];
+                filterContainer.innerHTML = depts.map(dept => `
+                    <button class="px-5 py-2.5 bg-dark-400 text-gray-400 border border-white/5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all filter-btn ${dept === 'all' ? 'active bg-brand-600 text-white' : ''}" 
+                        data-dept="${dept}">
+                        ${dept}
+                    </button>
+                `).join('');
+
+                renderJobs('all');
+
+                // Attach filter listeners
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => {
+                            b.classList.remove('active', 'bg-brand-600', 'text-white');
+                            b.classList.add('bg-dark-400', 'text-gray-400');
+                        });
+                        btn.classList.add('active', 'bg-brand-600', 'text-white');
+                        btn.classList.remove('bg-dark-400', 'text-gray-400');
+                        renderJobs(btn.dataset.dept);
+                    });
+                });
+
+            } catch (err) {
+                container.innerHTML = `<p class="text-center text-red-400">Error loading jobs. Please email us your resume.</p>`;
+                console.error(err);
+            }
+        }
+
+        function renderJobs(filter) {
+            const container = document.getElementById('jobs-container');
+            const filteredJobs = filter === 'all' ? allJobs : allJobs.filter(j => j.department.toLowerCase() === filter);
+            
+            if (filteredJobs.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-500 py-20">No matching positions found.</p>`;
+                return;
+            }
+
+            container.innerHTML = filteredJobs.map(job => `
+                <div class="reveal bg-dark-300 rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 transition-all card-lift group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-[10px] font-black uppercase rounded-full tracking-widest">${job.department}</span>
+                                <span class="px-3 py-1 bg-white/5 text-gray-500 text-[10px] font-black uppercase rounded-full tracking-widest">${job.type}</span>
+                            </div>
+                            <h3 class="text-2xl font-bold font-display uppercase tracking-tight group-hover:text-brand-400 transition-colors">${job.title}</h3>
+                            <p class="mt-2 text-gray-500 text-sm max-w-xl">${job.description}</p>
+                            <div class="mt-4 flex flex-wrap gap-4 items-center">
+                                <div class="flex items-center gap-2 text-xs text-gray-600">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                                    ${job.location}
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-gray-600">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                    Posted: ${job.posted}
+                                </div>
+                            </div>
+                        </div>
+                        <a href="mailto:work@sufi.engineering?subject=Application for ${job.title}" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-black text-[10px] uppercase tracking-[0.2em] px-8 py-4 rounded-full transition-all group-hover:scale-105">
+                            Apply Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Restart observer for new elements
+            document.querySelectorAll('.reveal').forEach(el => new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.1}).observe(el));
+        }
+
+        loadJobs();
+
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children').forEach(el => new IntersectionObserver((e) => { e.forEach(en => { if (en.isIntersecting) en.target.classList.add('active') }) }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }).observe(el));
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,87 @@
+[
+    {
+        "id": "cnc-laser-operator-1",
+        "title": "CNC Laser Machine Operator",
+        "department": "Production",
+        "location": "Okara",
+        "type": "Full-time",
+        "description": "Expert in operating fiber laser cutting machines. Must understand DXF files and material parameters.",
+        "requirements": [
+            "2+ years experience with CNC Laser machines",
+            "Ability to read technical drawings",
+            "Knowledge of machine maintenance"
+        ],
+        "posted": "2026-03-20"
+    },
+    {
+        "id": "mech-engineer-1",
+        "title": "Mechanical Engineer (Machine Design)",
+        "department": "Engineering",
+        "location": "Okara",
+        "type": "Full-time",
+        "description": "Design and optimize rice processing machinery using SolidWorks and CAD tools.",
+        "requirements": [
+            "B.Sc Mechanical Engineering",
+            "Proficiency in 3D Modeling (SolidWorks/Fusion 360)",
+            "Understanding of manufacturing processes"
+        ],
+        "posted": "2026-03-25"
+    },
+    {
+        "id": "sales-engineer-1",
+        "title": "Sales Engineer (Industrial)",
+        "department": "Sales",
+        "location": "Lahore/Multan",
+        "type": "Full-time",
+        "description": "Consultative sales for rice mill owners. Provide technical solutions and machinery quotes.",
+        "requirements": [
+            "Experience in industrial sales",
+            "Excellent communication skills",
+            "Willingness to travel to mill sites"
+        ],
+        "posted": "2026-03-15"
+    },
+    {
+        "id": "fab-supervisor-1",
+        "title": "Fabrication Supervisor",
+        "department": "Production",
+        "location": "Okara",
+        "type": "Full-time",
+        "description": "Oversee the welding and fabrication shop. Ensure parts meet quality standards.",
+        "requirements": [
+            "Dae Mechanical or equivalent",
+            "Deep knowledge of welding techniques",
+            "Leadership experience in a workshop"
+        ],
+        "posted": "2026-03-22"
+    },
+    {
+        "id": "internship-summer-2026",
+        "title": "Summer Internship 2026",
+        "department": "Various",
+        "location": "Okara",
+        "type": "Internship",
+        "description": "A 3-month program for engineering students to learn real-world manufacturing.",
+        "requirements": [
+            "Enrolled in 3rd or 4th year of Engineering degree",
+            "Strong learning mindset",
+            "Passion for industrial technology"
+        ],
+        "posted": "2026-03-10"
+    },
+    {
+        "id": "draftsman-1",
+        "title": "Industrial Draftsman",
+        "department": "Engineering",
+        "location": "Okara",
+        "type": "Full-time",
+        "description": "Create detailed technical drawings and 2D layouts for machine components and factory layouts. Bridge the gap between engineering concepts and production.",
+        "requirements": [
+            "Expert proficiency in AutoCAD (2D/3D)",
+            "Ability to convert 3D models into production-ready 2D drawings",
+            "Experience with sheet metal flat patterns for CNC laser cutting",
+            "Diploma in Mechanical Drafting or equivalent"
+        ],
+        "posted": "2026-03-27"
+    }
+]
