@@ -1,42 +1,90 @@
 {
-  "baseRate": 0.05,
-  "baseCharges": 200,
-  "piercingRate": 2.0,
-  "gasFactors": {
-    "air": 1.0,
-    "oxygen": 1.5
+  "currency": "PKR",
+  "symbol": "₨",
+
+  "charges": {
+    "minCharge": 250,
+    "setupCharge": 150,
+    "handlingCharge": 50
   },
-  "thicknessFactor": {
-    "baselineThickness": 1.0,
-    "baselineFactor": 1.0,
-    "maxThickness": 16.0,
-    "maxFactor": 2.5
-  },
+
   "materials": {
-    "none": {
-      "name": "I will provide my own sheet",
-      "density": 0,
-      "rateKg": 0
-    },
     "ms": {
-      "name": "Mild Steel (MS)",
+      "name": "Mild Steel",
       "density": 7.85,
-      "rateKg": 240
+      "rateKg": 240,
+      "baseCutRate": 0.035,
+      "gasFactor": 1.0
     },
     "ss": {
-      "name": "Stainless Steel (SS)",
+      "name": "Stainless Steel",
       "density": 8.0,
-      "rateKg": 550
+      "rateKg": 550,
+      "baseCutRate": 0.055,
+      "gasFactor": 1.3
     },
     "gs": {
-      "name": "Galvanized Steel (GS)",
+      "name": "Galvanized Steel",
       "density": 7.85,
-      "rateKg": 250
+      "rateKg": 250,
+      "baseCutRate": 0.045,
+      "gasFactor": 1.1
     },
     "alu": {
       "name": "Aluminium",
       "density": 2.7,
-      "rateKg": 1000
+      "rateKg": 1000,
+      "baseCutRate": 0.065,
+      "gasFactor": 1.3
     }
+  },
+
+  "cutting": {
+    "thicknessFactor": {
+      "multiplierPerMM": 0.08,
+      "maxFactor": 2.5
+    },
+    "gasFactors": {
+      "air": 1.0,
+      "oxygen": 1.5
+    },
+    "leadInOutCostPerPart": 5
+  },
+
+  "piercing": {
+    "baseRate": 1.2,
+    "perMM": 0.15
+  },
+
+  "material": {
+    "markup": 1.12,
+    "scrapFactor": 1.08
+  },
+
+  "complexity": {
+    "factors": {
+      "simple": 1.0,
+      "medium": 1.1,
+      "complex": 1.2
+    },
+    "rules": {
+      "smallHolesThresholdMM": 1.5,
+      "thinWebThresholdMM": 2.0,
+      "penaltyFactor": 1.05
+    }
+  },
+
+  "quantity": {
+    "discounts": [
+      { "minQty": 1, "factor": 1.0 },
+      { "minQty": 10, "factor": 0.95 },
+      { "minQty": 50, "factor": 0.90 },
+      { "minQty": 100, "factor": 0.85 }
+    ]
+  },
+
+  "rounding": {
+    "method": "nearest",
+    "unit": 5
   }
 }

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Premium CNC Laser Cutting Services in Pakistan | Quotes from Rs. 200</title>
-    <meta name="description" content="Experience flawless edge quality with our state-of-the-art CNC laser cutting division. Upload your DXF for an algorithmic instant quote starting at just Rs. 200. Zero slag, perfect tolerance.">
+    <title>Premium CNC Laser Cutting Services in Pakistan | Quotes from Rs. 250</title>
+    <meta name="description" content="Experience flawless edge quality with our state-of-the-art CNC laser cutting division. Upload your DXF for an algorithmic instant quote starting at just Rs. 250. Zero slag, perfect tolerance.">
     <meta name="keywords" content="CNC laser cutting, laser cutting services Pakistan, DXF instant quote, sheet metal fabrication, custom metal cutting, flat laser cutting">
     <meta property="og:title" content="Premium CNC Laser Cutting Services | Sufi Engineering">
-    <meta property="og:description" content="State-of-the-art precision laser cutting. Upload your DXF for an algorithmic instant quote starting at just Rs. 200. Zero slag, perfect tolerance.">
+    <meta property="og:description" content="State-of-the-art precision laser cutting. Upload your DXF for an algorithmic instant quote starting at just Rs. 250. Zero slag, perfect tolerance.">
     <meta property="og:url" content="https://sufi.engineering/laser/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sufi Engineering">
@@ -34,14 +34,14 @@
         "name": "Sufi Engineering",
         "url": "https://sufi.engineering/"
       },
-      "description": "Premium CNC laser cutting services from Rs. 200. Upload your DXF file for transparent, algorithmic instant pricing. We ensure zero slag and perfect ±0.1mm tolerance on mild steel, stainless steel, and more.",
+      "description": "Premium CNC laser cutting services from Rs. 250. Upload your DXF file for transparent, algorithmic instant pricing. We ensure zero slag and perfect ±0.1mm tolerance on mild steel, stainless steel, and more.",
       "areaServed": "Pakistan",
       "offers": {
         "@type": "Offer",
         "priceSpecification": {
           "@type": "UnitPriceSpecification",
           "priceCurrency": "PKR",
-          "price": "200.00",
+          "price": "250.00",
           "referenceQuantity": {
             "@type": "QuantitativeValue",
             "value": "1",
@@ -116,10 +116,10 @@
                 CNC Laser Cutting Division
             </div>
             <h1 class="reveal font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-                Flawless Edges. <span class="text-gradient">From Rs. 200.</span>
+                Flawless Edges. <span class="text-gradient">From Rs. 250.</span>
             </h1>
             <p class="reveal mt-6 text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl">
-                We don't just cut metal; we engineer components that elevate your product. Experience manufacturing excellence with an instant, transparent quote. <strong class="text-white block mt-3">Unbeatable pricing starting from just Rs. 200.</strong>
+                We don't just cut metal; we engineer components that elevate your product. Experience manufacturing excellence with an instant, transparent quote. <strong class="text-white block mt-3">Unbeatable pricing starting from just Rs. 250.</strong>
             </p>
             <div class="reveal mt-8 flex flex-col sm:flex-row gap-4">
                 <a href="#quote" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-full transition-all btn-magnetic text-base">
@@ -195,7 +195,7 @@
         <div class="text-center mb-12">
             <span class="reveal text-brand-500 text-sm font-semibold tracking-widest uppercase">Instant Quote</span>
             <h2 class="reveal mt-3 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Upload DXF, Get Your <span class="text-gradient">Price</span></h2>
-            <p class="reveal mt-4 text-gray-400 max-w-2xl mx-auto">Unbeatable transparent pricing <strong class="text-white">starting from just Rs. 200</strong>. Upload your design file and see your exact quote instantly.</p>
+            <p class="reveal mt-4 text-gray-400 max-w-2xl mx-auto">Unbeatable transparent pricing <strong class="text-white">starting from just Rs. 250</strong>. Upload your design file and see your exact quote instantly.</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
@@ -257,15 +257,22 @@
                         <p class="text-xs text-gray-400 mt-2" id="gasTypeHelp">Choose gas type for sizes between 2mm and 6mm.</p>
                     </div>
                     <div class="col-span-2 bg-dark-300 border border-white/5 rounded-xl p-4">
-                        <label class="text-xs text-gray-500 uppercase tracking-wider">Material Sheet</label>
+                        <label class="text-xs text-gray-500 uppercase tracking-wider">Material</label>
                         <select id="material" class="w-full mt-2 bg-dark-200 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-brand-500" aria-label="Material">
-                            <option value="none" selected>I will provide my own sheet</option>
-                            <option value="ms">Mild Steel (MS)</option>
+                            <option value="ms" selected>Mild Steel (MS)</option>
                             <option value="ss">Stainless Steel (SS)</option>
                             <option value="gs">Galvanized Steel (GS)</option>
                             <option value="alu">Aluminium</option>
                         </select>
-                        <p class="text-xs text-gray-400 mt-2">Select a material if you need us to provide the sheet. Rates vary by material type and calculated weight.</p>
+                        <p class="text-xs text-gray-400 mt-2">Cutting speed and assist gas differ by material, so this affects the price even when you bring your own sheet.</p>
+                    </div>
+                    <div class="col-span-2 bg-dark-300 border border-white/5 rounded-xl p-4">
+                        <label class="text-xs text-gray-500 uppercase tracking-wider">Sheet Supplied By</label>
+                        <select id="sheetSupply" class="w-full mt-2 bg-dark-200 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-brand-500" aria-label="Who supplies the sheet">
+                            <option value="customer" selected>I will provide my own sheet</option>
+                            <option value="sufi">Sufi Engineering supplies the sheet</option>
+                        </select>
+                        <p class="text-xs text-gray-400 mt-2">If we supply, material is billed on the calculated weight of your part's bounding rectangle.</p>
                     </div>
                 </div>
 
@@ -296,14 +303,31 @@
                     </div>
 
                     <div id="quoteResult" class="hidden">
-                        <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center justify-between gap-3 mb-2">
                             <h3 class="font-display text-lg font-bold">Your Quote</h3>
-                            <span id="fileName" class="text-xs text-gray-500 bg-dark-200 px-3 py-1 rounded-full"></span>
+                            <span id="fileName" class="text-xs text-gray-500 bg-dark-200 px-3 py-1 rounded-full truncate max-w-[55%]"></span>
+                        </div>
+                        <div class="flex items-center justify-between gap-3 mb-6 text-xs">
+                            <span class="text-gray-500">Ref <span id="quoteRef" class="font-mono text-brand-400">—</span></span>
+                            <span id="quoteValidity" class="text-gray-600"></span>
                         </div>
 
                         <!-- DXF Preview -->
                         <div class="mb-6 bg-dark-200 rounded-xl p-4 border border-white/5">
-                            <canvas id="dxfCanvas" class="w-full rounded-lg" style="height:200px" aria-label="DXF file preview"></canvas>
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <div class="inline-flex bg-dark-400 rounded-lg p-1" role="tablist" aria-label="Preview mode">
+                                    <button id="tab2d" type="button" role="tab" aria-selected="true" class="preview-tab px-3 py-1.5 text-xs font-medium rounded-md transition-colors bg-brand-600 text-white">2D Cut Path</button>
+                                    <button id="tab3d" type="button" role="tab" aria-selected="false" class="preview-tab px-3 py-1.5 text-xs font-medium rounded-md transition-colors text-gray-400 hover:text-white">3D Part</button>
+                                </div>
+                                <span id="previewHint" class="text-xs text-gray-600"></span>
+                            </div>
+                            <div id="view2d">
+                                <canvas id="dxfCanvas" class="w-full rounded-lg" style="height:240px" aria-label="DXF cut path preview"></canvas>
+                            </div>
+                            <div id="view3d" class="hidden relative">
+                                <div id="dxfViewport" class="w-full rounded-lg overflow-hidden bg-dark-300" style="height:240px" aria-label="3D part preview"></div>
+                                <div id="viewer3dStatus" class="absolute inset-0 flex items-center justify-center text-center text-xs text-gray-500 px-6 pointer-events-none"></div>
+                            </div>
                         </div>
 
                         <!-- Quote Breakdown -->
@@ -328,30 +352,78 @@
                                         <span id="cutLengthDisplay" class="font-semibold text-white">—</span>
                                     </div>
                                     <div class="flex justify-between items-center py-1 border-b border-white/5">
-                                        <span class="text-gray-400">Variable Cost (Length + <span id="pierceCountDisplay" class="text-gray-300">0</span> Piercings)</span>
-                                        <span id="variableCostDisplay" class="font-semibold text-white">—</span>
+                                        <span class="text-gray-400">Cutting (<span id="materialTypeDisplay" class="text-gray-300"></span> @ <span id="thicknessDisplay" class="text-gray-300"></span>)</span>
+                                        <span id="lengthCostDisplay" class="font-semibold text-white">—</span>
                                     </div>
                                     <div class="flex justify-between items-center py-1 border-b border-white/5">
-                                        <span class="text-gray-400">Base Charge (+PKR <span id="baseChargeValueDisplay">200</span>)</span>
-                                        <span id="baseChargeAppliedDisplay" class="font-semibold text-brand-400">—</span>
+                                        <span class="text-gray-400">Piercing (<span id="pierceCountDisplay" class="text-gray-300">0</span> ×)</span>
+                                        <span id="piercingCostDisplay" class="font-semibold text-white">—</span>
                                     </div>
-                                    <div id="materialCostRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
-                                        <span class="text-gray-400">Material Cost (<span id="materialTypeDisplay" class="text-xs uppercase"></span>)</span>
-                                        <span id="materialCostDisplay" class="font-semibold text-white">—</span>
+                                    <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                        <span class="text-gray-400">Lead-in / Lead-out</span>
+                                        <span id="leadCostDisplay" class="font-semibold text-white">—</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                        <span class="text-gray-400">Complexity (<span id="complexityTierDisplay" class="text-gray-300">simple</span>)</span>
+                                        <span id="complexityFactorDisplay" class="font-semibold text-white">—</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                        <span class="text-gray-300 font-medium">Cost per piece</span>
+                                        <span id="perPartCostDisplay" class="font-semibold text-white">—</span>
                                     </div>
                                     <div class="flex justify-between items-center py-1 border-b border-white/5">
                                         <span class="text-gray-400">Quantity</span>
                                         <span id="qtyDisplay" class="font-semibold text-white">—</span>
                                     </div>
+                                    <div id="discountRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
+                                        <span class="text-gray-400">Volume Discount</span>
+                                        <span id="discountDisplay" class="font-semibold text-green-400">—</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-1 border-b border-white/5">
+                                        <span class="text-gray-400">Cutting Subtotal</span>
+                                        <span id="cuttingSubtotalDisplay" class="font-semibold text-white">—</span>
+                                    </div>
+                                    <div id="minChargeRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
+                                        <span class="text-gray-400">Minimum Order Charge</span>
+                                        <span id="minChargeDisplay" class="font-semibold text-brand-400">—</span>
+                                    </div>
+                                    <div id="materialCostRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
+                                        <span class="text-gray-400">Material (<span id="materialWeightDisplay" class="text-gray-300"></span>)</span>
+                                        <span id="materialCostDisplay" class="font-semibold text-white">—</span>
+                                    </div>
+                                    <div id="setupRow" class="justify-between items-center py-1 border-b border-white/5 hidden">
+                                        <span class="text-gray-400">Setup Charge</span>
+                                        <span id="setupDisplay" class="font-semibold text-white">—</span>
+                                    </div>
+                                    <div class="flex justify-between items-center py-1">
+                                        <span class="text-gray-400">Handling</span>
+                                        <span id="handlingDisplay" class="font-semibold text-white">—</span>
+                                    </div>
                                 </div>
                             </details>
                         </div>
 
-                        <div class="flex justify-center">
-                            <a href="https://wa.me/923216954361?text=Hi%20Sufi%20Engineering!%20I%20need%20a%20laser%20cutting%20quote." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all btn-magnetic shadow-lg shadow-brand-600/30">
-                                Order Now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </a>
+                        <!-- Lead Capture -->
+                        <div class="bg-dark-200/60 border border-white/5 rounded-xl p-5 mb-6">
+                            <p class="text-sm font-medium text-gray-300">Send this quote to our operators</p>
+                            <p class="text-xs text-gray-500 mt-1">We'll reply with lead time and confirm the cut. Your details stay on this device until you send.</p>
+                            <div class="grid sm:grid-cols-2 gap-3 mt-4">
+                                <input type="text" id="leadName" placeholder="Your name" autocomplete="name" class="w-full bg-dark-200 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500" aria-label="Your name">
+                                <input type="tel" id="leadPhone" placeholder="Phone / WhatsApp" autocomplete="tel" class="w-full bg-dark-200 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500" aria-label="Phone number">
+                                <input type="text" id="leadCompany" placeholder="Company (optional)" autocomplete="organization" class="sm:col-span-2 w-full bg-dark-200 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-brand-500" aria-label="Company">
+                            </div>
                         </div>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                            <a id="orderBtn" href="https://wa.me/923216954361" target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all btn-magnetic shadow-lg shadow-brand-600/30">
+                                Send Quote on WhatsApp <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </a>
+                            <button id="copyQuoteBtn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/15 hover:border-white/35 hover:bg-white/5 text-gray-300 text-sm font-medium px-6 py-3.5 rounded-full transition-all">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                <span id="copyQuoteLabel">Copy Summary</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-600 text-center mt-4">Remember to attach your DXF in the WhatsApp chat so we can confirm the cut path.</p>
                     </div>
                 </div>
             </div>
@@ -482,7 +554,7 @@
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <div class="reveal">
             <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Ready to Start<br>Your <span class="text-gradient">Project</span>?</h2>
-            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Upload your DXF file for an instant quote starting from just Rs. 200, or contact us to discuss your laser cutting requirements.</p>
+            <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Upload your DXF file for an instant quote starting from just Rs. 250, or contact us to discuss your laser cutting requirements.</p>
             <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#quote" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-full transition-all btn-magnetic text-base">Get Instant Quote <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
                 <a href="https://wa.me/923216954361?text=Hi%20Sufi%20Engineering!%20I%20need%20laser%20cutting%20services." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-8 py-4 rounded-full transition-all hover:bg-white/5 text-base">
@@ -526,27 +598,57 @@
 
 <script>
 // ===== DXF Parser & Cut-Length Quote Calculator =====
-// Single pricing method: PKR 0.06 per mm of total cut length
+// Pricing model (see /laser/rates.json — these defaults mirror its schema and are
+// the fallback if the fetch fails, so both must stay in sync):
+//   per part = (cutLength × materialRate × thicknessFactor × gasFactors + piercing + leadIn) × complexity
+//   order    = max(perPart × qty × volumeDiscount, minCharge) + material + setup + handling
 
-let rates = {
-    baseRate: 0.05,
-    baseCharges: 200,
-    piercingRate: 2.0,
-    gasFactors: { air: 1.0, oxygen: 1.5 },
-    thicknessFactor: { baselineThickness: 1.0, baselineFactor: 1.0, maxThickness: 16.0, maxFactor: 2.5 },
+const DEFAULT_RATES = {
+    currency: 'PKR',
+    symbol: '₨',
+    charges: { minCharge: 250, setupCharge: 150, handlingCharge: 50 },
     materials: {
-        "none": { "name": "I will provide my own sheet", "density": 0, "rateKg": 0 },
-        "ms": { "name": "Mild Steel (MS)", "density": 7.85, "rateKg": 300 },
-        "ss": { "name": "Stainless Steel (SS)", "density": 8.0, "rateKg": 1200 },
-        "gs": { "name": "Galvanized Steel (GS)", "density": 7.85, "rateKg": 350 },
-        "alu": { "name": "Aluminium", "density": 2.7, "rateKg": 1000 }
-    }
+        ms:  { name: 'Mild Steel',      density: 7.85, rateKg: 240,  baseCutRate: 0.035, gasFactor: 1.0 },
+        ss:  { name: 'Stainless Steel', density: 8.0,  rateKg: 550,  baseCutRate: 0.055, gasFactor: 1.3 },
+        gs:  { name: 'Galvanized Steel',density: 7.85, rateKg: 250,  baseCutRate: 0.045, gasFactor: 1.1 },
+        alu: { name: 'Aluminium',       density: 2.7,  rateKg: 1000, baseCutRate: 0.065, gasFactor: 1.3 }
+    },
+    cutting: {
+        thicknessFactor: { multiplierPerMM: 0.08, maxFactor: 2.5 },
+        gasFactors: { air: 1.0, oxygen: 1.5 },
+        leadInOutCostPerPart: 5
+    },
+    piercing: { baseRate: 1.2, perMM: 0.15 },
+    material: { markup: 1.12, scrapFactor: 1.08 },
+    complexity: {
+        factors: { simple: 1.0, medium: 1.1, complex: 1.2 },
+        rules: { smallHolesThresholdMM: 1.5, thinWebThresholdMM: 2.0, penaltyFactor: 1.05 }
+    },
+    quantity: {
+        discounts: [ { minQty: 1, factor: 1.0 }, { minQty: 10, factor: 0.95 }, { minQty: 50, factor: 0.90 }, { minQty: 100, factor: 0.85 } ]
+    },
+    rounding: { method: 'nearest', unit: 5 }
 };
 
-fetch('/laser/rates.json')
-    .then(r => r.json())
-    .then(data => { rates = data; })
-    .catch(e => console.error('Failed to load rates.json', e));
+// Deep-merge so a partial or older rates.json can never leave a key undefined.
+function mergeRates(base, override) {
+    if (!override || typeof override !== 'object' || Array.isArray(override)) return override ?? base;
+    const out = Array.isArray(base) ? [...base] : { ...base };
+    for (const [k, v] of Object.entries(override)) {
+        out[k] = (v && typeof v === 'object' && !Array.isArray(v) && base && typeof base[k] === 'object')
+            ? mergeRates(base[k], v)
+            : v;
+    }
+    return out;
+}
+
+let rates = DEFAULT_RATES;
+
+// Quoting must wait for this — otherwise a fast click prices at fallback rates.
+const ratesReady = fetch('/laser/rates.json')
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(data => { rates = mergeRates(DEFAULT_RATES, data); })
+    .catch(e => console.error('Failed to load rates.json, using built-in defaults.', e));
 
 function parseDXF(content) {
     const tokens = [];
@@ -725,17 +827,24 @@ function transformEntity(e, tx, ty, sx, sy, rot) {
         for(let j=1; j<res.vertices.length; j++) len += Math.hypot(res.vertices[j].x - res.vertices[j-1].x, res.vertices[j].y - res.vertices[j-1].y);
         res.length = len;
     } else if (e.type === 'ELLIPSE') {
-        let cx=0,cy=0,majX=0,majY=0,ratio=1;
+        let cx=0,cy=0,majX=0,majY=0,ratio=1,sp=0,ep=Math.PI*2;
         e.params.forEach(g => {
             if(g.code===10) cx=parseFloat(g.value); if(g.code===20) cy=parseFloat(g.value);
             if(g.code===11) majX=parseFloat(g.value); if(g.code===21) majY=parseFloat(g.value);
             if(g.code===40) ratio=parseFloat(g.value);
+            if(g.code===41) sp=parseFloat(g.value); if(g.code===42) ep=parseFloat(g.value);
         });
         const c = tp(cx, cy);
         const a = Math.hypot(majX, majY) * Math.abs(sx);
         const b = a * ratio;
         res.cx = c.x; res.cy = c.y;
-        res.length = Math.PI * (3*(a+b) - Math.sqrt((3*a+b)*(a+3*b)));
+        res.rx = a; res.ry = b;
+        res.rotation = Math.atan2(majY, majX) + rad;
+        res.startParam = sp; res.endParam = ep;
+        let sweep = ep - sp; if (sweep <= 0) sweep += Math.PI * 2;
+        res.isClosed = sweep >= Math.PI * 2 - 1e-6;
+        const fullPerimeter = Math.PI * (3*(a+b) - Math.sqrt((3*a+b)*(a+3*b)));
+        res.length = fullPerimeter * (sweep / (Math.PI * 2));
     } else {
         res.length = 0;
     }
@@ -747,6 +856,7 @@ function getBoundingBox(entities) {
     entities.forEach(e => {
         if (e.type==='LINE' && e.points) e.points.forEach(p => { minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y); });
         else if (e.type==='CIRCLE'||e.type==='ARC') { minX=Math.min(minX,e.cx-e.r);minY=Math.min(minY,e.cy-e.r);maxX=Math.max(maxX,e.cx+e.r);maxY=Math.max(maxY,e.cy+e.r); }
+        else if (e.type==='ELLIPSE') { const m=Math.max(e.rx||0,e.ry||0); minX=Math.min(minX,e.cx-m);minY=Math.min(minY,e.cy-m);maxX=Math.max(maxX,e.cx+m);maxY=Math.max(maxY,e.cy+m); }
         else if ((e.type==='LWPOLYLINE'||e.type==='SPLINE') && e.vertices) e.vertices.forEach(p => { minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y); });
     });
     if (!isFinite(minX)) return { width:0, height:0, minX:0, minY:0, maxX:0, maxY:0 };
@@ -755,14 +865,14 @@ function getBoundingBox(entities) {
 
 function countPiercings(entities, scale = 1.0) {
     if(!entities || entities.length === 0) return 0;
-    const pts = [], uf = [];
+    // Map keyed on a 0.1mm grid — a linear indexOf here made large DXFs O(n²) and froze the tab.
+    const index = new Map(), uf = [];
     function find(i) { return uf[i] === i ? i : (uf[i] = find(uf[i])); }
     function union(i, j) { const ri = find(i), rj = find(j); if(ri !== rj) uf[ri] = rj; }
     function addPoint(x, y) {
-        const cx = Math.round(x * scale * 10), cy = Math.round(y * scale * 10);
-        const id = `${cx},${cy}`;
-        let idx = pts.indexOf(id);
-        if(idx === -1) { pts.push(id); uf.push(uf.length); idx = pts.length - 1; }
+        const id = Math.round(x * scale * 10) + ',' + Math.round(y * scale * 10);
+        let idx = index.get(id);
+        if(idx === undefined) { idx = uf.length; uf.push(idx); index.set(id, idx); }
         return idx;
     }
 
@@ -792,86 +902,279 @@ function countPiercings(entities, scale = 1.0) {
         }
     });
 
-    const components = new Set(pts.map((_, i) => find(i)));
+    const components = new Set();
+    for (const idx of index.values()) components.add(find(idx));
     return singlePierces + components.size;
 }
 
+// Feeds the complexity penalty in rates.complexity.rules. Holes are where tight
+// features actually show up, so both checks work off circular geometry.
+function detectComplexityFlags(entities, scale, rules) {
+    const circles = [];
+    for (const e of entities) {
+        if (e.type === 'CIRCLE') circles.push({ x: e.cx * scale, y: e.cy * scale, r: e.r * scale });
+        if (circles.length > 500) break; // guard against pathological files
+    }
+    const smallHoles = circles.some(c => c.r * 2 < rules.smallHolesThresholdMM);
+    let thinWebs = false;
+    for (let i = 0; i < circles.length && !thinWebs; i++) {
+        for (let j = i + 1; j < circles.length; j++) {
+            const a = circles[i], b = circles[j];
+            if (Math.hypot(a.x - b.x, a.y - b.y) - a.r - b.r < rules.thinWebThresholdMM) { thinWebs = true; break; }
+        }
+    }
+    return { smallHoles, thinWebs };
+}
+
+function roundPrice(amount) {
+    const unit = (rates.rounding && rates.rounding.unit) || 1;
+    if (unit <= 1) return Math.round(amount);
+    const method = (rates.rounding && rates.rounding.method) || 'nearest';
+    if (method === 'up') return Math.ceil(amount / unit) * unit;
+    if (method === 'down') return Math.floor(amount / unit) * unit;
+    return Math.round(amount / unit) * unit;
+}
+
+// Price breaks must never make a bigger order cheaper than a smaller one. Billing the
+// cheapest tier reachable from this quantity means a 49-pc order simply pays the 50-pc
+// price, instead of the raw tiers producing a total that drops as quantity rises.
+function cuttingSubtotalFor(perPartCost, quantity) {
+    const tiers = (rates.quantity.discounts || []).length
+        ? rates.quantity.discounts
+        : [{ minQty: 1, factor: 1.0 }];
+    let best = null;
+    for (const d of tiers) {
+        const billedQty = Math.max(quantity, d.minQty);
+        const subtotal = perPartCost * billedQty * d.factor;
+        if (!best || subtotal < best.subtotal) best = { subtotal, factor: d.factor, minQty: d.minQty, billedQty };
+    }
+    return best;
+}
+
+// ===== Contour reconstruction (for the 3D solid preview) =====
+// DXF stores loose entities, but an extrusion needs closed loops. We tessellate each
+// entity to a polyline, chain the open ones end-to-end, then work out which resulting
+// loops are outlines and which are holes.
+
+function tessellateEntity(e, scale) {
+    const S = p => ({ x: p.x * scale, y: p.y * scale });
+    const arcPoints = (cx, cy, r, a0, a1, rx, ry, rot) => {
+        let sweep = a1 - a0;
+        while (sweep <= 0) sweep += Math.PI * 2;
+        const steps = Math.max(6, Math.ceil((sweep / (Math.PI * 2)) * 72));
+        const pts = [];
+        for (let i = 0; i <= steps; i++) {
+            const t = a0 + (sweep * i) / steps;
+            if (rx !== undefined) {
+                const px = rx * Math.cos(t), py = ry * Math.sin(t);
+                const c = Math.cos(rot), s = Math.sin(rot);
+                pts.push({ x: (cx + px * c - py * s) * scale, y: (cy + px * s + py * c) * scale });
+            } else {
+                pts.push({ x: (cx + r * Math.cos(t)) * scale, y: (cy + r * Math.sin(t)) * scale });
+            }
+        }
+        return pts;
+    };
+
+    switch (e.type) {
+        case 'LINE':
+            return e.points ? { points: e.points.map(S), closed: false } : null;
+        case 'CIRCLE':
+            return { points: arcPoints(e.cx, e.cy, e.r, 0, Math.PI * 2).slice(0, -1), closed: true };
+        case 'ARC':
+            return { points: arcPoints(e.cx, e.cy, e.r, e.startAngle * Math.PI / 180, e.endAngle * Math.PI / 180), closed: false };
+        case 'ELLIPSE': {
+            const pts = arcPoints(e.cx, e.cy, 0, e.startParam || 0, (e.endParam ?? Math.PI * 2), e.rx, e.ry, e.rotation || 0);
+            return e.isClosed ? { points: pts.slice(0, -1), closed: true } : { points: pts, closed: false };
+        }
+        case 'LWPOLYLINE':
+        case 'SPLINE':
+            if (!e.vertices || e.vertices.length < 2) return null;
+            return { points: e.vertices.map(S), closed: !!e.isClosed };
+        default:
+            return null;
+    }
+}
+
+function signedArea(pts) {
+    let a = 0;
+    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) a += (pts[j].x + pts[i].x) * (pts[j].y - pts[i].y);
+    return a / 2;
+}
+
+function pointInPolygon(pt, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+        const xi = poly[i].x, yi = poly[i].y, xj = poly[j].x, yj = poly[j].y;
+        if ((yi > pt.y) !== (yj > pt.y) && pt.x < ((xj - xi) * (pt.y - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+    return inside;
+}
+
+function buildContours(entities, scale) {
+    const closed = [], open = [];
+    for (const e of entities) {
+        const pl = tessellateEntity(e, scale);
+        if (!pl || pl.points.length < 2) continue;
+        (pl.closed ? closed : open).push(pl.points);
+    }
+
+    // Tolerance for treating two endpoints as the same point, scaled to the drawing.
+    const all = [...closed, ...open].flat();
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (const p of all) { minX = Math.min(minX, p.x); minY = Math.min(minY, p.y); maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y); }
+    const diag = isFinite(minX) ? Math.hypot(maxX - minX, maxY - minY) : 0;
+    const TOL = Math.min(0.2, Math.max(0.01, diag * 1e-4));
+    const key = p => Math.round(p.x / TOL) + ',' + Math.round(p.y / TOL);
+
+    // Chain open segments head-to-tail into loops.
+    const ends = new Map();
+    open.forEach((seg, i) => {
+        for (const k of [key(seg[0]), key(seg[seg.length - 1])]) {
+            if (!ends.has(k)) ends.set(k, []);
+            ends.get(k).push(i);
+        }
+    });
+    const used = new Array(open.length).fill(false);
+    const takeNext = (k, skip) => {
+        for (const i of (ends.get(k) || [])) if (!used[i] && i !== skip) return i;
+        return -1;
+    };
+
+    const openPaths = [];
+    for (let i = 0; i < open.length; i++) {
+        if (used[i]) continue;
+        used[i] = true;
+        let chain = open[i].slice();
+        // extend forward, then backward
+        for (const dir of [0, 1]) {
+            while (true) {
+                const tail = dir === 0 ? chain[chain.length - 1] : chain[0];
+                if (key(tail) === key(dir === 0 ? chain[0] : chain[chain.length - 1]) && chain.length > 2) break;
+                const j = takeNext(key(tail), -1);
+                if (j === -1) break;
+                used[j] = true;
+                let seg = open[j].slice();
+                if (key(seg[seg.length - 1]) === key(tail)) seg.reverse();
+                if (dir === 0) chain = chain.concat(seg.slice(1));
+                else chain = seg.slice(0, -1).reverse().concat(chain);
+            }
+        }
+        const isLoop = chain.length > 2 && key(chain[0]) === key(chain[chain.length - 1]);
+        if (isLoop) closed.push(chain.slice(0, -1));
+        else openPaths.push(chain);
+    }
+
+    // Nest loops: even containment depth = outline, odd = hole in the smallest loop around it.
+    const loops = closed.filter(l => l.length >= 3 && Math.abs(signedArea(l)) > 1e-9);
+    const meta = loops.map(l => ({ pts: l, area: Math.abs(signedArea(l)) }));
+    const parent = new Array(meta.length).fill(-1);
+    const depth = new Array(meta.length).fill(0);
+    for (let i = 0; i < meta.length; i++) {
+        for (let j = 0; j < meta.length; j++) {
+            if (i === j || meta[j].area <= meta[i].area) continue;
+            if (pointInPolygon(meta[i].pts[0], meta[j].pts)) {
+                depth[i]++;
+                if (parent[i] === -1 || meta[j].area < meta[parent[i]].area) parent[i] = j;
+            }
+        }
+    }
+
+    const shapes = [];
+    const shapeIndex = new Map();
+    meta.forEach((m, i) => {
+        if (depth[i] % 2 === 0) { shapeIndex.set(i, shapes.length); shapes.push({ outer: m.pts, holes: [] }); }
+    });
+    meta.forEach((m, i) => {
+        if (depth[i] % 2 === 1 && parent[i] !== -1 && shapeIndex.has(parent[i])) {
+            shapes[shapeIndex.get(parent[i])].holes.push(m.pts);
+        }
+    });
+
+    return { shapes, openPaths, loopCount: meta.length };
+}
+
 function calculateQuote(entities, quantity) {
-    const dxfScale = document.getElementById('dxfUnits') && document.getElementById('dxfUnits').value === 'in' ? 25.4 : 1.0;
+    const dxfScale = document.getElementById('dxfUnits').value === 'in' ? 25.4 : 1.0;
+    const thickness = parseFloat(document.getElementById('thickness').value);
+    const gasType = document.getElementById('gasType').value;
+    const materialKey = document.getElementById('material').value;
+    const customerSupplies = document.getElementById('sheetSupply').value !== 'sufi';
+    const mat = rates.materials[materialKey] || rates.materials.ms;
 
     let totalLength = 0;
     entities.forEach(e => { totalLength += (e.length || 0) * dxfScale; });
-    
-    const thickness = parseFloat(document.getElementById('thickness').value);
-    const gasType = document.getElementById('gasType').value;
-    
-    let tFactor = rates.thicknessFactor.baselineFactor;
-    if (thickness > rates.thicknessFactor.baselineThickness) {
-        const tRange = rates.thicknessFactor.maxThickness - rates.thicknessFactor.baselineThickness;
-        const fRange = rates.thicknessFactor.maxFactor - rates.thicknessFactor.baselineFactor;
-        const perMm = fRange / tRange;
-        tFactor = rates.thicknessFactor.baselineFactor + ((thickness - rates.thicknessFactor.baselineThickness) * perMm);
-        if (thickness > rates.thicknessFactor.maxThickness) tFactor = rates.thicknessFactor.maxFactor;
+
+    // --- Per-piece cutting cost ---
+    const tf = rates.cutting.thicknessFactor;
+    const tFactor = Math.min(1 + thickness * tf.multiplierPerMM, tf.maxFactor);
+    const processGasFactor = rates.cutting.gasFactors[gasType] || 1.0;
+    const effectiveRate = mat.baseCutRate * tFactor * mat.gasFactor * processGasFactor;
+    const lengthCost = totalLength * effectiveRate;
+
+    const piercings = countPiercings(entities, dxfScale);
+    const pierceUnitCost = rates.piercing.baseRate + rates.piercing.perMM * thickness;
+    const piercingCost = piercings * pierceUnitCost;
+
+    const leadCost = rates.cutting.leadInOutCostPerPart;
+
+    const flags = detectComplexityFlags(entities, dxfScale, rates.complexity.rules);
+    const tier = piercings <= 2 ? 'simple' : piercings <= 10 ? 'medium' : 'complex';
+    let complexityFactor = rates.complexity.factors[tier];
+    if (flags.smallHoles || flags.thinWebs) complexityFactor *= rates.complexity.rules.penaltyFactor;
+
+    const perPartCost = (lengthCost + piercingCost + leadCost) * complexityFactor;
+
+    // --- Order level: setup, handling and the minimum are charged once per job, not per piece ---
+    const discount = cuttingSubtotalFor(perPartCost, quantity);
+    const cuttingSubtotal = discount.subtotal;
+
+    const rawBbox = getBoundingBox(entities);
+    const bbox = { width: rawBbox.width * dxfScale, height: rawBbox.height * dxfScale };
+
+    let materialCost = 0, weightKg = 0;
+    if (!customerSupplies && bbox.width > 0 && bbox.height > 0) {
+        // Bounding-rectangle estimate: no nesting yet, so this is deliberately conservative.
+        const volumeMm3 = bbox.width * bbox.height * thickness * quantity;
+        weightKg = (volumeMm3 / 1000000) * mat.density; // mm³ × g/cm³ ÷ 1e6 = kg
+        materialCost = weightKg * mat.rateKg * rates.material.scrapFactor * rates.material.markup;
     }
 
-    const gFactor = rates.gasFactors[gasType] || 1.0;
-    const piercings = countPiercings(entities, dxfScale);
-    
-    const piercingCost = piercings * rates.piercingRate;
-    const lengthCost = totalLength * rates.baseRate * tFactor * gFactor;
-    const varCutCost = lengthCost + piercingCost;
-    
-    let baseApplied = false;
-    let finalCutCost = varCutCost;
-    if (varCutCost < rates.baseCharges) {
-        finalCutCost = rates.baseCharges;
-        baseApplied = true;
-    }
-    
-    const rawBbox = getBoundingBox(entities);
-    const bbox = {
-        width: rawBbox.width * dxfScale, height: rawBbox.height * dxfScale,
-        minX: rawBbox.minX * dxfScale, minY: rawBbox.minY * dxfScale,
-        maxX: rawBbox.maxX * dxfScale, maxY: rawBbox.maxY * dxfScale
-    };
-    const materialKey = document.getElementById('material') ? document.getElementById('material').value : 'none';
-    const materialData = rates.materials && rates.materials[materialKey] ? rates.materials[materialKey] : { density: 0, rateKg: 0, name: '' };
-    
-    let materialCost = 0, weightKg = 0;
-    if (materialKey !== 'none' && bbox.width > 0 && bbox.height > 0) {
-        const volumeMm3 = bbox.width * bbox.height * thickness;
-        weightKg = (volumeMm3 / 1000000) * materialData.density; // 1,000,000 mm³ in 1 liter equivalent scale mapping for cm³ to kg
-        materialCost = weightKg * materialData.rateKg;
-    }
+    // Setup is real machine time on every job — charging it only below a quantity
+    // threshold made a 5-piece order cheaper than a 4-piece one.
+    const setupCost = rates.charges.setupCharge;
+    const handlingCost = rates.charges.handlingCharge;
+
+    const subtotal = cuttingSubtotal + materialCost + setupCost + handlingCost;
+    const minApplied = subtotal < rates.charges.minCharge;
+    const totalCost = roundPrice(Math.max(subtotal, rates.charges.minCharge));
+    const unitCost = totalCost / quantity;
 
     console.group('%c⚡ LASER CUTTING QUOTE WORKING', 'color: #dc2626; font-weight: bold; font-size: 14px');
-    console.log(`Cut Length: ${totalLength.toFixed(2)} mm`);
-    console.log(`Thickness Factor: ${tFactor.toFixed(3)}`);
-    console.log(`Gas Factor: ${gFactor.toFixed(3)}`);
-    console.log(`Length Variable Cost: ${lengthCost.toFixed(2)} PKR`);
-    console.log(`Piercing Cost (${piercings} pierces): ${piercingCost.toFixed(2)} PKR`);
-    console.log(`%cTotal Variable Cutting Cost (Length + Piercing): ${varCutCost.toFixed(2)} PKR`, 'color: #22c55e; font-weight: bold');
-    if (baseApplied) {
-        console.log(`%cBase Charge (${rates.baseCharges} PKR) Applied because Variable Cost is lower than Minimum.`, 'color: #eab308; font-weight: bold');
+    console.log(`Material: ${mat.name} @ ${thickness} mm, gas: ${gasType}`);
+    console.log(`Cut Length: ${totalLength.toFixed(2)} mm × ${effectiveRate.toFixed(5)} PKR/mm = ${lengthCost.toFixed(2)} PKR`);
+    console.log(`  (baseCutRate ${mat.baseCutRate} × thickness ${tFactor.toFixed(3)} × material gas ${mat.gasFactor} × process gas ${processGasFactor})`);
+    console.log(`Piercing: ${piercings} × ${pierceUnitCost.toFixed(2)} = ${piercingCost.toFixed(2)} PKR`);
+    console.log(`Lead-in/out: ${leadCost.toFixed(2)} PKR`);
+    console.log(`Complexity: ${tier} ×${complexityFactor.toFixed(3)}${flags.smallHoles ? ' [small holes]' : ''}${flags.thinWebs ? ' [thin webs]' : ''}`);
+    console.log(`%cPer piece: ${perPartCost.toFixed(2)} PKR`, 'color: #22c55e; font-weight: bold');
+    console.log(`Quantity: ${quantity} billed as ${discount.billedQty} × discount ${discount.factor} → cutting subtotal ${cuttingSubtotal.toFixed(2)} PKR`);
+    if (!customerSupplies) {
+        console.log(`%cMaterial: ${bbox.width.toFixed(1)} × ${bbox.height.toFixed(1)} × ${thickness} mm × ${quantity}`, 'color: #3b82f6');
+        console.log(`  Est. weight ${weightKg.toFixed(3)} kg @ ${mat.rateKg} PKR/kg × scrap ${rates.material.scrapFactor} × markup ${rates.material.markup} = ${materialCost.toFixed(2)} PKR`);
     }
-    console.log(`Final Cutting Unit Cost: ${finalCutCost.toFixed(2)} PKR`);
-    
-    if (materialKey !== 'none') {
-        console.log(`%cMaterial: ${materialData.name}`, 'color: #3b82f6');
-        console.log(`Dimensions: ${bbox.width.toFixed(2)} x ${bbox.height.toFixed(2)} x ${thickness} mm`);
-        console.log(`Volume: ${(bbox.width * bbox.height * thickness).toFixed(2)} mm³`);
-        console.log(`Est. Weight: ${weightKg.toFixed(3)} kg (Density: ${materialData.density} g/cm³)`);
-        console.log(`Material Cost: ${materialCost.toFixed(2)} PKR (@ ${materialData.rateKg} PKR/kg)`);
-    }
-
-    const unitCost = finalCutCost + materialCost;
-    const totalCost = unitCost * quantity;
-
-    console.log(`Total Unit Cost: ${unitCost.toFixed(2)} PKR`);
-    console.log(`Total Price (${quantity} pcs): ${totalCost.toFixed(2)} PKR`);
+    console.log(`Setup: ${setupCost} PKR · Handling: ${handlingCost} PKR`);
+    if (minApplied) console.log(`%cOrder total raised to the ${rates.charges.minCharge} PKR minimum (was ${subtotal.toFixed(2)}).`, 'color: #eab308; font-weight: bold');
+    console.log(`%cTOTAL (${quantity} pcs): ${totalCost} PKR — ${unitCost.toFixed(2)} PKR/pc`, 'color: #dc2626; font-weight: bold; font-size: 13px');
     console.groupEnd();
-    
-    return { unitCost, totalCost, quantity, totalLength, piercings, varCutCost, baseApplied, piercingCost, materialKey, materialCost, weightKg, materialName: materialData.name, bbox };
+
+    return {
+        unitCost, totalCost, quantity, totalLength, piercings, thickness, gasType,
+        lengthCost, piercingCost, leadCost, complexityFactor, tier, flags,
+        perPartCost, discount, cuttingSubtotal, subtotal, minApplied,
+        customerSupplies, materialKey, materialName: mat.name, materialCost, weightKg,
+        setupCost, handlingCost, bbox
+    };
 }
 
 function drawDXFPreview(canvas, entities) {
@@ -887,6 +1190,7 @@ function drawDXFPreview(canvas, entities) {
     entities.forEach(e => {
         if (e.type==='LINE' && e.points) e.points.forEach(p => { minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y); });
         else if (e.type==='CIRCLE'||e.type==='ARC') { minX=Math.min(minX,e.cx-e.r);minY=Math.min(minY,e.cy-e.r);maxX=Math.max(maxX,e.cx+e.r);maxY=Math.max(maxY,e.cy+e.r); }
+        else if (e.type==='ELLIPSE') { const m=Math.max(e.rx||0,e.ry||0); minX=Math.min(minX,e.cx-m);minY=Math.min(minY,e.cy-m);maxX=Math.max(maxX,e.cx+m);maxY=Math.max(maxY,e.cy+m); }
         else if ((e.type==='LWPOLYLINE'||e.type==='SPLINE') && e.vertices) e.vertices.forEach(p => { minX=Math.min(minX,p.x);minY=Math.min(minY,p.y);maxX=Math.max(maxX,p.x);maxY=Math.max(maxY,p.y); });
     });
     if (!isFinite(minX)) return;
@@ -904,6 +1208,7 @@ function drawDXFPreview(canvas, entities) {
         if (e.type==='LINE' && e.points) { ctx.moveTo(tx(e.points[0].x),ty(e.points[0].y)); ctx.lineTo(tx(e.points[1].x),ty(e.points[1].y)); }
         else if (e.type==='CIRCLE') { ctx.arc(tx(e.cx),ty(e.cy),e.r*scale,0,Math.PI*2); }
         else if (e.type==='ARC') { ctx.arc(tx(e.cx),ty(e.cy),e.r*scale,-e.endAngle*Math.PI/180,-e.startAngle*Math.PI/180); }
+        else if (e.type==='ELLIPSE') { ctx.ellipse(tx(e.cx),ty(e.cy),(e.rx||0)*scale,(e.ry||0)*scale,-(e.rotation||0),-e.endParam,-e.startParam,true); }
         else if ((e.type==='LWPOLYLINE'||e.type==='SPLINE') && e.vertices && e.vertices.length>0) {
             ctx.moveTo(tx(e.vertices[0].x),ty(e.vertices[0].y));
             for (let j=1;j<e.vertices.length;j++) ctx.lineTo(tx(e.vertices[j].x),ty(e.vertices[j].y));
@@ -915,43 +1220,123 @@ function drawDXFPreview(canvas, entities) {
 
 function formatPKR(amount) { return 'PKR ' + amount.toLocaleString('en-PK', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 
+const QUOTE_VALID_DAYS = 7;
+const WHATSAPP_NUMBER = '923216954361';
+
+function makeQuoteRef() {
+    const d = new Date(), p = n => String(n).padStart(2, '0');
+    const stamp = String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate());
+    const rand = Math.random().toString(36).slice(2, 6).toUpperCase();
+    return `SE-LC-${stamp}-${rand}`;
+}
+
+function toggleRow(el, show) {
+    el.classList.toggle('hidden', !show);
+    el.classList.toggle('flex', show);
+}
+
+// Everything the operator needs to reproduce the quote without asking a single question.
+function buildQuoteSummary(quote, fileName, ref) {
+    const lead = readLeadDetails();
+    const validUntil = new Date(Date.now() + QUOTE_VALID_DAYS * 86400000);
+    const lines = [
+        `*Laser Cutting Quote — ${ref}*`,
+        lead.name ? `Name: ${lead.name}` : null,
+        lead.phone ? `Phone: ${lead.phone}` : null,
+        lead.company ? `Company: ${lead.company}` : null,
+        '',
+        `File: ${fileName}`,
+        `Material: ${quote.materialName} · ${quote.thickness} mm · ${quote.gasType === 'oxygen' ? 'Oxygen' : 'Air'}`,
+        `Sheet: ${quote.customerSupplies ? 'Customer supplied' : 'Supplied by Sufi Engineering'}`,
+        `Part size: ${quote.bbox.width.toFixed(1)} × ${quote.bbox.height.toFixed(1)} mm`,
+        `Cut length: ${quote.totalLength.toFixed(1)} mm · Piercings: ${quote.piercings}`,
+        `Quantity: ${quote.quantity} ${quote.quantity > 1 ? 'pcs' : 'pc'}`,
+        '',
+        `*Total: ${formatPKR(quote.totalCost)}* (${formatPKR(quote.unitCost)} / pc)`,
+        `Valid until ${validUntil.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}`,
+        '',
+        'Attaching my DXF here.'
+    ];
+    return lines.filter(l => l !== null).join('\n');
+}
+
+function readLeadDetails() {
+    return {
+        name: document.getElementById('leadName').value.trim(),
+        phone: document.getElementById('leadPhone').value.trim(),
+        company: document.getElementById('leadCompany').value.trim()
+    };
+}
+
+function refreshOrderLink() {
+    if (!currentQuote) return;
+    const text = buildQuoteSummary(currentQuote, currentFileName, currentQuoteRef);
+    document.getElementById('orderBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
 function updateQuote(entities, fileName) {
     const quantity = Math.max(1, parseInt(document.getElementById('quantity').value) || 1);
     const quote = calculateQuote(entities, quantity);
+    currentQuote = quote;
+    currentFileName = fileName;
+    currentQuoteRef = makeQuoteRef();
 
     document.getElementById('emptyState').classList.add('hidden');
     document.getElementById('quoteResult').classList.remove('hidden');
     document.getElementById('fileName').textContent = fileName;
-    
+    document.getElementById('quoteRef').textContent = currentQuoteRef;
+    const validUntil = new Date(Date.now() + QUOTE_VALID_DAYS * 86400000);
+    document.getElementById('quoteValidity').textContent = 'Valid until ' + validUntil.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+
     document.getElementById('partDimensions').textContent = quote.bbox.width.toFixed(1) + ' × ' + quote.bbox.height.toFixed(1) + ' mm';
     document.getElementById('cutLengthDisplay').textContent = quote.totalLength.toFixed(1) + ' mm';
-    document.getElementById('qtyDisplay').textContent = quantity + (quantity > 1 ? ' pcs' : ' pc');
-    
-    document.getElementById('variableCostDisplay').textContent = formatPKR(quote.varCutCost);
+    document.getElementById('materialTypeDisplay').textContent = quote.materialName;
+    document.getElementById('thicknessDisplay').textContent = quote.thickness + ' mm';
+    document.getElementById('lengthCostDisplay').textContent = formatPKR(quote.lengthCost);
     document.getElementById('pierceCountDisplay').textContent = quote.piercings;
-    
-    document.getElementById('baseChargeValueDisplay').textContent = rates.baseCharges;
-    document.getElementById('baseChargeAppliedDisplay').textContent = quote.baseApplied ? 'Applied' : 'Not Applied';
-    
-    const matRow = document.getElementById('materialCostRow');
-    if (quote.materialKey !== 'none') {
-        matRow.classList.remove('hidden');
-        matRow.classList.add('flex');
+    document.getElementById('piercingCostDisplay').textContent = formatPKR(quote.piercingCost);
+    document.getElementById('leadCostDisplay').textContent = formatPKR(quote.leadCost);
+    document.getElementById('complexityTierDisplay').textContent = quote.tier
+        + (quote.flags.smallHoles ? ', small holes' : '')
+        + (quote.flags.thinWebs ? ', thin webs' : '');
+    document.getElementById('complexityFactorDisplay').textContent = '× ' + quote.complexityFactor.toFixed(2);
+    document.getElementById('perPartCostDisplay').textContent = formatPKR(quote.perPartCost);
+    document.getElementById('qtyDisplay').textContent = quantity + (quantity > 1 ? ' pcs' : ' pc');
 
-        document.getElementById('materialTypeDisplay').textContent = quote.materialName;
-        document.getElementById('materialCostDisplay').textContent = formatPKR(quote.materialCost);
-        document.getElementById('materialNotice').textContent = '(Includes cutting & material cost)';
-    } else {
-        matRow.classList.add('hidden');
-        matRow.classList.remove('flex');
-        document.getElementById('materialNotice').textContent = '(Customer provides sheet)';
+    const hasDiscount = quote.discount.factor < 1;
+    toggleRow(document.getElementById('discountRow'), hasDiscount);
+    if (hasDiscount) {
+        const pct = '−' + Math.round((1 - quote.discount.factor) * 100) + '%';
+        document.getElementById('discountDisplay').textContent = quote.discount.billedQty > quantity
+            ? pct + ' (billed as ' + quote.discount.billedQty + ' pcs)'
+            : pct;
     }
 
+    document.getElementById('cuttingSubtotalDisplay').textContent = formatPKR(quote.cuttingSubtotal);
+    toggleRow(document.getElementById('minChargeRow'), quote.minApplied);
+    if (quote.minApplied) document.getElementById('minChargeDisplay').textContent = 'raised to ' + formatPKR(rates.charges.minCharge);
+
+    toggleRow(document.getElementById('materialCostRow'), !quote.customerSupplies);
+    if (!quote.customerSupplies) {
+        document.getElementById('materialWeightDisplay').textContent = quote.weightKg.toFixed(2) + ' kg';
+        document.getElementById('materialCostDisplay').textContent = formatPKR(quote.materialCost);
+    }
+
+    toggleRow(document.getElementById('setupRow'), true);
+    document.getElementById('setupDisplay').textContent = formatPKR(quote.setupCost);
+    document.getElementById('handlingDisplay').textContent = formatPKR(quote.handlingCost);
+
+    document.getElementById('materialNotice').textContent = quote.customerSupplies
+        ? '(Cutting only — customer provides sheet)'
+        : '(Includes cutting & material cost)';
     document.getElementById('totalPrice').textContent = formatPKR(quote.totalCost);
+
+    refreshOrderLink();
     drawDXFPreview(document.getElementById('dxfCanvas'), entities);
+    if (previewMode === '3d') activate3D(); // thickness/material changes reshape the solid
 }
 
-let currentEntities = [], currentFileName = '';
+let currentEntities = [], currentFileName = '', currentQuote = null, currentQuoteRef = '';
 
 function handleFile(file) {
     if (!file || !file.name.toLowerCase().endsWith('.dxf')) { alert('Please upload a valid .dxf file'); return; }
@@ -1004,14 +1389,120 @@ thicknessEl.addEventListener('change', () => {
     if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse');
 });
 gasTypeEl.addEventListener('change', () => { if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse'); });
-document.getElementById('material')?.addEventListener('change', () => { if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse'); });
-document.getElementById('dxfUnits')?.addEventListener('change', () => { if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse'); });
+['material', 'sheetSupply', 'dxfUnits'].forEach(id => {
+    document.getElementById(id).addEventListener('change', () => { if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse'); });
+});
 document.getElementById('quantity').addEventListener('input', () => { if (currentEntities.length > 0) document.getElementById('calculateBtn').classList.add('animate-pulse'); });
 
-document.getElementById('calculateBtn').addEventListener('click', () => {
-    document.getElementById('calculateBtn').classList.remove('animate-pulse');
-    if (currentEntities.length > 0) updateQuote(currentEntities, currentFileName);
+document.getElementById('calculateBtn').addEventListener('click', async () => {
+    const btn = document.getElementById('calculateBtn');
+    btn.classList.remove('animate-pulse');
+    if (currentEntities.length === 0) return;
+    btn.disabled = true;
+    await ratesReady; // never quote on fallback rates just because the fetch was slow
+    btn.disabled = false;
+    updateQuote(currentEntities, currentFileName);
 });
+
+// ===== Lead capture =====
+const LEAD_STORAGE_KEY = 'se-laser-lead';
+const leadFields = ['leadName', 'leadPhone', 'leadCompany'];
+
+try {
+    const saved = JSON.parse(localStorage.getItem(LEAD_STORAGE_KEY) || '{}');
+    leadFields.forEach(id => { if (saved[id]) document.getElementById(id).value = saved[id]; });
+} catch (e) { /* corrupted or unavailable storage — start blank */ }
+
+leadFields.forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+        refreshOrderLink();
+        try {
+            const payload = {};
+            leadFields.forEach(f => { payload[f] = document.getElementById(f).value; });
+            localStorage.setItem(LEAD_STORAGE_KEY, JSON.stringify(payload));
+        } catch (e) { /* storage full or blocked — the quote link still works */ }
+    });
+});
+
+document.getElementById('copyQuoteBtn').addEventListener('click', async () => {
+    if (!currentQuote) return;
+    const label = document.getElementById('copyQuoteLabel');
+    const text = buildQuoteSummary(currentQuote, currentFileName, currentQuoteRef).replace(/\*/g, '');
+    try {
+        await navigator.clipboard.writeText(text);
+        label.textContent = 'Copied!';
+    } catch (e) {
+        label.textContent = 'Copy failed';
+    }
+    setTimeout(() => { label.textContent = 'Copy Summary'; }, 2000);
+});
+
+// ===== Preview tabs + bridge to the 3D module =====
+// The viewer is an ES module (three.js), so it loads after this script and hands back
+// its API through this promise. Everything here degrades to the 2D view if that fails.
+window.__preview3D = {};
+window.__preview3DReady = new Promise((resolve, reject) => {
+    window.__preview3D._resolve = api => { window.__preview3D.api = api; resolve(api); };
+    setTimeout(() => reject(new Error('3D viewer load timed out')), 15000);
+});
+window.__preview3DReady.catch(() => {}); // keep an unloaded viewer from logging as unhandled
+
+window.SufiQuote = {
+    getPreviewData() {
+        if (!currentEntities.length) return null;
+        const scale = document.getElementById('dxfUnits').value === 'in' ? 25.4 : 1.0;
+        const contours = buildContours(currentEntities, scale);
+        return {
+            shapes: contours.shapes,
+            openPaths: contours.openPaths,
+            thickness: parseFloat(document.getElementById('thickness').value),
+            materialKey: document.getElementById('material').value
+        };
+    }
+};
+
+const previewTabs = { '2d': document.getElementById('tab2d'), '3d': document.getElementById('tab3d') };
+let previewMode = '2d';
+
+async function activate3D() {
+    const status = document.getElementById('viewer3dStatus');
+    const data = window.SufiQuote.getPreviewData();
+    if (!data) return;
+    status.textContent = 'Loading 3D viewer…';
+    let api;
+    try {
+        api = await window.__preview3DReady;
+    } catch (e) {
+        status.textContent = '3D preview unavailable — the viewer could not be loaded. Your quote and the 2D cut path are unaffected.';
+        return;
+    }
+    try {
+        const result = api.show(data);
+        status.textContent = (result && result.message) || '';
+    } catch (e) {
+        console.error('3D preview failed', e);
+        status.textContent = 'This file could not be rendered in 3D. The 2D cut path and your quote are unaffected.';
+    }
+}
+
+function setPreviewMode(mode) {
+    previewMode = mode;
+    for (const [m, btn] of Object.entries(previewTabs)) {
+        const active = m === mode;
+        btn.setAttribute('aria-selected', String(active));
+        btn.classList.toggle('bg-brand-600', active);
+        btn.classList.toggle('text-white', active);
+        btn.classList.toggle('text-gray-400', !active);
+    }
+    document.getElementById('view2d').classList.toggle('hidden', mode !== '2d');
+    document.getElementById('view3d').classList.toggle('hidden', mode !== '3d');
+    document.getElementById('previewHint').textContent = mode === '3d' ? 'Drag to rotate · scroll to zoom' : '';
+    if (mode === '3d') activate3D();
+    else if (window.__preview3D.api) window.__preview3D.api.pause();
+}
+
+previewTabs['2d'].addEventListener('click', () => setPreviewMode('2d'));
+previewTabs['3d'].addEventListener('click', () => setPreviewMode('3d'));
 
 // ===== Common Site Scripts =====
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('loaded'),300)});
@@ -1023,6 +1514,215 @@ const navbar=document.getElementById('navbar');window.addEventListener('scroll',
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children').forEach(el=>new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('active')})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'}).observe(el));
 document.querySelectorAll('.counter-number').forEach(el=>{new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting){const t=parseInt(el.dataset.target);let c=0;const s=t/(2000/16);const u=()=>{c+=s;if(c<t){el.textContent=Math.ceil(c)+'+';requestAnimationFrame(u)}else el.textContent=t+'+'};u();en.target._ob&&en.target._ob.unobserve(en.target)}})},{threshold:0.5}).observe(el)});
 if('ontouchstart' in window){document.querySelectorAll('.card-lift').forEach(c=>{c.addEventListener('touchstart',()=>c.style.transform='scale(0.98)',{passive:true});c.addEventListener('touchend',()=>c.style.transform='',{passive:true})})}
+</script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.180.0/build/three.module.min.js",
+    "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+// ===== 3D part preview =====
+// Extrudes the reconstructed DXF contours to the selected sheet thickness so the
+// customer sees the actual plate — holes and all — before ordering.
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// Optional: gives the metal something to reflect. Not worth failing the viewer over.
+let RoomEnvironment = null;
+try { ({ RoomEnvironment } = await import('three/addons/environments/RoomEnvironment.js')); } catch (e) {}
+
+const LOOKS = {
+    ms:  { color: 0x8b9096, metalness: 0.92, roughness: 0.44 },
+    ss:  { color: 0xccd2d8, metalness: 0.95, roughness: 0.20 },
+    gs:  { color: 0xb7c1c8, metalness: 0.88, roughness: 0.34 },
+    alu: { color: 0xd8dbde, metalness: 0.90, roughness: 0.30 }
+};
+
+let renderer, scene, camera, controls, partGroup, grid;
+let running = false, frameId = 0, initialised = false;
+
+function init(container) {
+    renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'low-power' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.05;
+    renderer.domElement.style.display = 'block';
+    container.appendChild(renderer.domElement);
+
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x111111);
+
+    camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100000);
+
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+    controls.enablePan = false;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1.2;
+    controls.addEventListener('start', () => { controls.autoRotate = false; });
+    // OrbitControls sets touch-action:none, which traps page scrolling over the viewer.
+    // pan-y gives the page vertical scroll back and still leaves horizontal drag to rotate.
+    renderer.domElement.style.touchAction = 'pan-y';
+
+    scene.add(new THREE.HemisphereLight(0xbfd4ff, 0x141414, 0.9));
+    const key = new THREE.DirectionalLight(0xffffff, 2.0); key.position.set(1, 2, 1.4); scene.add(key);
+    const fill = new THREE.DirectionalLight(0xff6b5c, 0.55); fill.position.set(-1.6, 0.7, -1.1); scene.add(fill);
+    const rim = new THREE.DirectionalLight(0xffffff, 0.9); rim.position.set(-0.5, -1, 0.9); scene.add(rim);
+
+    if (RoomEnvironment) {
+        try {
+            const pmrem = new THREE.PMREMGenerator(renderer);
+            scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+            pmrem.dispose();
+        } catch (e) { /* lights alone are enough */ }
+    }
+
+    new ResizeObserver(() => resize(container)).observe(container);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
+    resize(container);
+    initialised = true;
+}
+
+function resize(container) {
+    if (!renderer) return;
+    const w = container.clientWidth || 1, h = container.clientHeight || 1;
+    // Must let setSize write the canvas CSS size. Suppressing it leaves the element at
+    // its intrinsic size (w × pixelRatio), which overflows the container on HiDPI screens.
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+}
+
+function disposePart() {
+    if (!partGroup) return;
+    partGroup.traverse(o => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => m.dispose());
+    });
+    scene.remove(partGroup);
+    partGroup = null;
+    if (grid) { scene.remove(grid); grid.geometry.dispose(); grid.material.dispose(); grid = null; }
+}
+
+function buildPart(data) {
+    disposePart();
+    partGroup = new THREE.Group();
+
+    const thickness = Math.max(0.1, data.thickness || 1);
+    const look = LOOKS[data.materialKey] || LOOKS.ms;
+    let message = '';
+
+    if (data.shapes.length) {
+        const shapes = data.shapes.map(s => {
+            const shape = new THREE.Shape(s.outer.map(p => new THREE.Vector2(p.x, p.y)));
+            for (const hole of s.holes) shape.holes.push(new THREE.Path(hole.map(p => new THREE.Vector2(p.x, p.y))));
+            return shape;
+        });
+
+        const geo = new THREE.ExtrudeGeometry(shapes, { depth: thickness, bevelEnabled: false, steps: 1, curveSegments: 12 });
+        geo.computeBoundingBox();
+        const c = geo.boundingBox.getCenter(new THREE.Vector3());
+        geo.translate(-c.x, -c.y, -c.z);
+        geo.computeVertexNormals();
+
+        partGroup.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+            color: look.color, metalness: look.metalness, roughness: look.roughness, envMapIntensity: 1.15
+        })));
+
+        // Crisp CAD-style outlines, skipped on very dense parts where they cost more than they add.
+        if (geo.attributes.position.count < 120000) {
+            partGroup.add(new THREE.LineSegments(
+                new THREE.EdgesGeometry(geo, 25),
+                new THREE.LineBasicMaterial({ color: 0x0b0b0b, transparent: true, opacity: 0.5 })
+            ));
+        }
+
+        const holeCount = data.shapes.reduce((n, s) => n + s.holes.length, 0);
+        message = '';
+        if (data.openPaths.length) {
+            message = `${data.openPaths.length} open path${data.openPaths.length > 1 ? 's' : ''} could not be closed and are not shown as solid.`;
+        }
+        window.__preview3D.lastStats = { shapes: data.shapes.length, holes: holeCount };
+    } else if (data.openPaths.length) {
+        // Nothing closed: show the cut paths instead of pretending we have a solid.
+        const mat = new THREE.LineBasicMaterial({ color: 0xdc2626 });
+        const box = new THREE.Box3();
+        for (const path of data.openPaths) {
+            const g = new THREE.BufferGeometry().setFromPoints(path.map(p => new THREE.Vector3(p.x, p.y, 0)));
+            const line = new THREE.Line(g, mat);
+            partGroup.add(line);
+            g.computeBoundingBox();
+            box.union(g.boundingBox);
+        }
+        const c = box.getCenter(new THREE.Vector3());
+        partGroup.children.forEach(l => l.position.sub(c));
+        message = 'No closed outlines found, so no solid could be formed — showing cut paths only. A part needs closed contours to be cut.';
+    } else {
+        message = 'Nothing to display for this file.';
+    }
+
+    partGroup.rotation.x = -Math.PI / 2; // lay the plate flat, like on the bed
+    scene.add(partGroup);
+
+    // Frame the camera on whatever we just built.
+    const box = new THREE.Box3().setFromObject(partGroup);
+    const size = box.getSize(new THREE.Vector3());
+    const radius = Math.max(size.length() / 2, 1);
+    const dist = (radius / Math.sin(THREE.MathUtils.degToRad(camera.fov) / 2)) * 1.25;
+    camera.position.copy(new THREE.Vector3(0.62, 0.55, 0.78).normalize().multiplyScalar(dist));
+    camera.near = Math.max(dist / 500, 0.01);
+    camera.far = dist * 100;
+    camera.updateProjectionMatrix();
+    controls.target.set(0, 0, 0);
+    controls.minDistance = radius * 0.4;
+    controls.maxDistance = dist * 4;
+    controls.autoRotate = true;
+    controls.update();
+
+    const gridSpan = Math.max(size.x, size.z) * 2.2;
+    grid = new THREE.GridHelper(gridSpan, 20, 0x2c2c2c, 0x1e1e1e);
+    grid.position.y = -Math.max(size.y, thickness) / 2 - gridSpan * 0.004;
+    grid.material.transparent = true;
+    grid.material.opacity = 0.5;
+    scene.add(grid);
+
+    return message;
+}
+
+function animate() {
+    if (!running) return;
+    frameId = requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+
+function start() { if (!running) { running = true; animate(); } }
+function pause() { running = false; cancelAnimationFrame(frameId); }
+
+function webglSupported() {
+    try {
+        return !!document.createElement('canvas').getContext('webgl2');
+    } catch (e) { return false; }
+}
+
+window.__preview3D._resolve({
+    show(data) {
+        if (!webglSupported()) return { message: 'Your browser does not support WebGL, so the 3D preview cannot run. The 2D cut path still works.' };
+        const container = document.getElementById('dxfViewport');
+        if (!initialised) init(container);
+        resize(container);
+        const message = buildPart(data);
+        start();
+        return { message };
+    },
+    pause
+});
 </script>
 </body>
 </html>
